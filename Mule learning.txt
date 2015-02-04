@@ -1,0 +1,321 @@
+LINKS
+https://docs.servicerocket.com/display/MULE/How+to+add+classes+or+jars+to+the+Mule+classpath
+
+
+
+Logger Component Configuration
+
+setting up log4j- need to setup the classpath for log4j if running the flow as application on the studio
+Run->Run Configuration -> [classpath tab] -> click on user Entries -> Advanced -> Select Add Folder -> select the location of your log4j.properties file
+and then -> OK -> run
+
+
+Configuring Logger example
+By default, the logger is set to log messages at a level greater than or equal to INFO, and thus will discard log messages at the DEBUG or TRACE level. 
+
+If you need to adjust the logging level or define custom categories, you can configure your log4j.properties file to define how the logger behaves. In Mule Standalone, your log4j.properties file is in your $MULE_HOME/conf folder. In Mule Studio, you need to create the log4j.properties file under src/main/resources. A sample file is provided below.
+
+For individual projects the config file is read from D:\Mule_Workspace\http-request-response-with-logger\src\main\app\log4j.properties  - the target log file is within the workspace folder of that project)
+
+
+if there is a MEL expression in the logger and (even if the RUNTIME logging is set to ERROR) - the MEL statement will still execute and use resources(though it may not print it out into the log)
+
+
+############################## THis is a MULE example ###########################################################
+# Default log level
+log4j.rootCategory=INFO, console
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=%-5p %d [%t] %c: %m%n
+################################################
+# You can set custom log levels per-package here
+################################################
+# CXF is used heavily by Mule for web services
+log4j.logger.org.apache.cxf=WARN
+# Apache Commons tend to make a lot of noise which can clutter the log.
+log4j.logger.org.apache=WARN
+# Reduce startup noise
+log4j.logger.org.springframework.beans.factory=WARN
+# Mule classes
+log4j.logger.org.mule=INFO
+log4j.logger.com.mulesoft=INFO
+# Reduce DM verbosity
+log4j.logger.org.jetel=WARN
+log4j.logger.Tracking=WARN
+
+##################################################### General Log4j example property file - All logging will be redirected to both log file and console. ##################################
+# Root logger option
+log4j.rootLogger=INFO, file, stdout
+ 
+# Direct log messages to a log file
+log4j.appender.file=org.apache.log4j.RollingFileAppender
+log4j.appender.file.File=C:\\loging.log
+log4j.appender.file.MaxFileSize=1MB
+log4j.appender.file.MaxBackupIndex=1
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+ 
+# Direct log messages to stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+
+
+log4j references - http://logging.apache.org/log4j/1.2/manual.html  ;;;; http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/PatternLayout.html ;;;;;
+
+
+
+############################################################# trial for log4j logging to file ###############
+# Root logger option
+log4j.rootCategory=INFO, file, stdout
+
+# Direct log messages to stdout
+log4j.appender.file=org.apache.log4j.FileAppender
+log4j.appender.file.File=/Users/me/Documents/apache-tomcat-7.0.34/wtpwebapps/my_app/log.txt
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+
+
+
+
+
+####################################################### Websphere MQ #############################
+jar files to download - dbhcore.jar
+http://www.java2s.com/Code/Jar/c/Downloadcomibmdhbcorejar.htm
+
+----#### to run the application in MULE Studio
+copy the jar files to ${studio.home}/plugins/org.mule.tooling.server.${mule.version}.ee_${mule.version}.${release.date}/mule/user 
+
+In the project (preferences) - java build path - add external jars (and the order and export tab ) - select the external jars that are added .
+
+Verifiy in the .classpath file in the workspace folder : eg: D:\Mule_Workspace\websphere-mq
+
+
+
+knowledge center - Mule -
+#
+
+
+Mule logs
+Entire application (or XML configuration file) 
+
+
+
+
+Training Notes. 
+
+Mule Message - Contains
+
+Inbound Properties -  (string,java Object){ simple key value pair maps ,This can only be read }
+Outbound Properties - (string , java object ) {key value pairs which can be read or written to }
+Payload - Object
+Attachments
+
+
+
+
+
+HTML files in src/main/resources folder
+jar files in src/main/jars
+java packages (eg: from the com folder) into the src/main/java.
+
+
+XSLT and DataMapper - Stream enabled. 
+
+
+MVEL
+
+
+Training data
+http://training.mulesoft.com/static/ape/index.html
+
+
+flkight reservations
+http://airlines.cloudhub.io/delta?wsdl
+
+
+
+
+Testing
+
+
+Junit first test case 
+- under src/test/java folder - new class file (on the window click superclass and type in fucntionaltest and select the first one which has *.*.junit4)
+
+- within that import the below
+import org.junit.Assert.*;
+import org.junit.Test;
+
+and then within the extends functionaltestCase{} right click  -> source -> override/Implement methods and select getConfigFile the below would appear
+	protected String getConfigFile() {
+		// TODO Auto-generated method stub
+		return super.getconfigFile();
+	}
+
+remove the super.getconfigFile ; and right click the project xml file and copy qualified name and paste it within quotes after the return 
+	
+	return " /.../.../...";
+	
+ctrl+shift+O will give you the required import packages to import (if some object or type is unresolvable - that is an easier way to do)
+	
+
+For bean exception - if there is for loading of the data mapper properties
+
+@overrider
+protected properties getStartUpProperties(){
+properties
+}
+	
+	
+
+questions :#
+
+1)  Is it better to have multiple flows in a single application running on same port (HTTP input on port 8081) only with different path - Or one flow which receives on /* and then routes it to different flows. 
+
+2) Custom Business events - can we write it out elsewhere (instead of the standard Mule Management Console) or publish it etc ?
+
+3) the payload of the mule message when an exception occurs - is it the original payload or payload at the point of the exception . 
+
+4) reconnect strategy of nodes
+
+5)clusterning load balancing - how to test it (since it is just on most available based on cpu /queue depths etc)
+
+6) Polling shared resources (database) - using watermarks . In a cluster , will the watermark be shared , so that each flow always gets the latest watermark.
+
+7) synchronous vs queued asynchronous vs exchange pattern (and its use in clusterning - in a slide - all your services are synchronous for when not to use clustering)
+
+8)
+
+MEL expressions
+
+#[message.inboundProperty['http.method']]
+#[xpath('reqiest/item').text] - within the braces xpath expression
+#[regex()] - sttring manupulation.
+
+
+localhost:8082/delta?destination=LAX
+
+
+for any path after the path defined in the input path for http connector - use the http.relative.path in the mel #[message.Inboundproperties['http.relative.path']]
+
+
+
+setting content type
+#[message.outboundProperties['content-type']='text/html']
+
+can use message properties / expression / http response builder  to set the content type. 
+
+
+#[sessionVars['airport']]
+
+
+for creating accounts in mysql
+http://che.cloudhub.io/
+
+
+
+For the CXF right click the AirportTerminal java file and click refactor and extract internface. (that would create another .java file - refer that in the CXF for the wsdl to have the format).
+
+
+
+Batch processing 
+- the hidden step between INput to process flows , 
+
+Error Handling
+-- Blocking or Non Blocking .
+Reconnect Strategy  <reconnect block ="TRUE"/> ::: SYstem exception reconnection strategy
+-- Attempt Count and frequency in ms
+	<reconnect count ="5" frequency = "1000"/>
+	
+	
+	Default exception
+	Catch the exception - log it and roll back . 
+	
+	reference exception strategy.
+	
+
+
+For trapping exception - MEL
+
+#[payload = "{\"status\":\"error\", \"message\":\"" + exception.cause.message + "\"}"]	
+
+Research on interfaces and abstract classes.
+
+
+To find out jvm the studio is running on - go to help ---> about ---> installation details ----> configuration (and look for the startup)
+
+
+If you want to start on 32 bit - create a separate bat file which sets the JAVA_HOME and the 
+
+
+
+
+Monitoriing
+
+Mule status  (on linux shows the status - but on windows it starts it up)
+port openings for the agent to communicate MMC - need to open through port 7777
+
+
+
+
+
+MMC API - json templates
+
+ADDING a server
+   {
+            "name": "Test2",
+			"agentUrl": http://localhost:7781/mmc-support
+			"groupIds" : [""]
+			}
+			
+			
+			
+SAP configuration 
+- remove the jar files from the build path first step (within reference libraries , -> build path -> remove from build path)
+- Then create a lib folder (not src/main/app/lib) but a lib folder directly under the project. 
+- Copy the jar files alone(not the DLL0 into this folder 
+- close studio and delete the jar files from src/main/app/lib , start studio
+- the sap connection details should automatically recognise the jar files from lib/***.jar and the connector should work . 
+
+Logger - convert payload to string.
+#[message.payloadAs(String)]
+
+
+
+Maven settings xml file for local - should be placed in <maven home>/conf/settings.xml
+
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <servers>
+    <server>
+      <id>mule-ee-releases</id>
+      <username>marks.spencer.nexus</username>
+      <password>f0rJ4d0Rd3C4mP30n35</password>
+    </server>
+    <server>
+      <id>mulesoft-dependencies</id>
+      <username>marks.spencer.nexus</username>
+      <password>f0rJ4d0Rd3C4mP30n35</password>
+    </server>
+  </servers>
+
+</settings>
+
+
+
+
+
+
+############################
+
+My VM urls
+
