@@ -8649,3 +8649,10 @@ https://192.168.187.10:9090/
  
  reference number for hp laptop - 
  
+ganglia
+http://hlxp0m0008.unix.marksandspencer.com/ganglia/?c=default
+
+
+
+super shared location for Marks and Spencer
+\\Gbhitopsser0016\icos\Stew\QAS_2014_Q4\xi52

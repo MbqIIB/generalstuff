@@ -1,0 +1,43 @@
+
+
+###############Refer the download page 
+######Follow steps for YUM 	 This is for a CENTOS VM
+http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
+
+
+
+
+##############Test for Elastic search
+curl -XGET 'http://192.168.56.40:9200/_count?pretty' -d '
+{
+    "query": {
+        "match_all": {}
+    }
+}
+'
+
+
+
+###############To install Marvel plugin for the sense console
+bin/plugin -i elasticsearch/marvel/latest
+
+#############and in the elasticsearch.yml add the below
+marvel.agent.enabled: false
+
+
+################Sense Console
+
+where 192.168.56.40 is the VM ip address
+
+http://192.168.56.40:9200/_plugin/marvel/sense/index.html
+
+
+
+###########searching
+
+http://192.168.56.40:9200/megacorp/employee/_search?pretty
+
+
+megacorp is the index (like database)
+employee is the type  (like table)
+and if you mention 1 then that is the ID (document ID) document is uploaded as part of the ID - (This is like a row)

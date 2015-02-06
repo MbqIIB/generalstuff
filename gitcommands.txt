@@ -1,3 +1,34 @@
  git config --global user.name Your Name
     git config --global user.email you@example.com
 
+
+
+
+
+#####Store username and password
+git config credential.helper store
+
+## to remove the credential store
+
+git config --unset credential.helper
+
+### To store the passwords in .git-credentials in your %HOME% directory as opposed to the project directory: use the --global flag
+git config --global credential.helper store
+
+
+################## For cygwin GIT use the below set of commands ############################
+##################################################
+#######Remember passwords for 15 minutes (default):
+
+git config --global credential.helper cache
+######Remember passwords for 10 hours:
+
+git config --global credential.helper 'cache --timeout=36000'
+########Store passwords (didn't try this):
+
+git config --global credential.helper store
+#########Reset:
+
+git config --unset --global credential.helper
+
+##########################################################
