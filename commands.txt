@@ -8654,5 +8654,11 @@ http://hlxp0m0008.unix.marksandspencer.com/ganglia/?c=default
 
 
 
+
 super shared location for Marks and Spencer
 \\Gbhitopsser0016\icos\Stew\QAS_2014_Q4\xi52
+
+
+My local Elastic Search Kibana
+http://192.168.56.40:9200 - sense console - http://192.168.56.40:9200/_plugin/marvel/sense/index.html
+http://192.168.56.40:5601 - Kibana console
