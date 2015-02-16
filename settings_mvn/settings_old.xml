@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" >
+ 	<servers>
+		<server>
+			<id>mule-ee-releases</id>
+			<username>marks.spencer.nexus</username>
+			<password>f0rJ4d0Rd3C4mP30n35</password>
+		</server>
+		<server>
+			<id>mulesoft-dependencies</id>
+			<username>marks.spencer.nexus</username>
+			<password>f0rJ4d0Rd3C4mP30n35</password>
+		</server>
+		<server>
+			<id>mulesoft-snapshots</id>
+			<username>marks.spencer.nexus</username>
+			<password>f0rJ4d0Rd3C4mP30n35</password>
+		</server>
+		
+		<server>
+			<id>mns.corp.nexus.release</id>
+			<username>sgonsalvez</username>
+			<password>KernelPanic</password>
+		</server>
+		<server>
+			<id>mns.corp.nexus.snapshot</id>
+			<username>sgonsalvez</username>
+			<password>KernelPanic</password>
+		</server>
+	</servers>
+</settings>

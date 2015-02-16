@@ -1,0 +1,56 @@
+<settings>
+    <servers>
+        <server>
+                        <!-- this is the ID of the corporate nexus releases for the MnS mule developed artefacts , the url is added as repository in the POM , match the ID and pass the credentials-->
+            <id>mns.corp.nexus.release</id>
+            <username>jenkins_user</username>
+            <password>******</password>
+        </server>
+        <server>
+                        <!-- this is the ID of the corporate nexus snapshots folder for the MnS mule developed artefacts , the url is added as repository in the POM , match the ID and pass the credentials-->
+            <id>mns.corp.nexus.snapshot</id>
+            <username>jenkins_user</username>
+            <password>****</password>
+        </server>
+    </servers>
+    
+                <!-- This is the nexus proxy which is created for maven central repository and the soap UI maven plugin-->
+        
+            <id>public.mirror.corp.nexus</id>
+            Central,central,smartbear-sweden-plugin-repository
+            <url>http://10.128.138.93:8081/nexus/content/repositories/public/</url>
+        
+        
+            <id>mulesoft.releases.mirror.corp.nexus</id>
+            mulesoft-releases
+            <url>http://10.128.138.93:8081/nexus/content/repositories/mulesoft-releases/</url>
+        
+    
+    <profiles>
+                <!-- profile for each of the network created, the properties here are required to be overwritten from in the POM, but not needed for the local system build -->
+        <profile>
+            <id>salina</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+
+     <properties>
+       <ciserver.http.port>18000</ciserver.http.port>
+       <ciserver.http.host>hlxd0mw01.unix.marksandspencerdev.com</ciserver.http.host>
+
+       http://hlxd0mw02.unix.marksandspencerdev.com:8585/mmc/api
+       dev
+       admin
+       *****
+       dev
+
+<!--       http://hlxd0mw02.unix.marksandspencerdev.com:8585/mmc-3.5.2/api
+       ci
+       admin
+       *****
+       dev -->
+     </properties>
+     </profile>
+         </profiles>
+         </settings>

@@ -1,0 +1,35 @@
+<!-- 
+The maven settings XML to be used only on the local laptop
+
+
+-->
+
+<settings>
+    <servers>
+        <server>
+			<!-- this is the ID of the corporate nexus releases for the MnS mule developed artefacts , the url is added as repository in the POM , match the ID and pass the credentials-->
+            <id>mns.corp.nexus.release</id>
+            <username>sgonsalvez</username>
+            <password>KernelPanic</password>
+        </server>
+        <server>
+			<!-- this is the ID of the corporate nexus snapshots folder for the MnS mule developed artefacts , the url is added as repository in the POM , match the ID and pass the credentials-->
+            <id>mns.corp.nexus.snapshot</id>
+            <username>sgonsalvez</username>
+            <password>KernelPanic</password>
+        </server>
+    </servers>
+    <mirrors>
+		<!-- This is the nexus proxy which is created for maven central repository and the soap UI maven plugin-->
+		<mirror>
+            <id>public.mirror.corp.nexus</id>
+            <mirrorOf>Central,central,smartbear-sweden-plugin-repository</mirrorOf>
+            <url>http://10.128.138.93:8081/nexus/content/repositories/public/</url>
+        </mirror>
+        <mirror>
+            <id>mulesoft.releases.mirror.corp.nexus</id>
+            <mirrorOf>mulesoft-releases</mirrorOf>
+            <url>http://10.128.138.93:8081/nexus/content/repositories/mulesoft-releases/</url>
+        </mirror>
+    </mirrors>
+   </settings>

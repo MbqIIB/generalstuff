@@ -1,0 +1,56 @@
+<!-- 
+The maven settings XML to be used only on the local laptop
+
+
+-->
+
+<settings>
+    <servers>
+        <server>
+			<!-- this is the ID of the corporate nexus releases for the MnS mule developed artefacts , the url is added as repository in the POM , match the ID and pass the credentials-->
+            <id>mns.corp.nexus.release</id>
+            <username>sgonsalvez</username>
+            <password>KernelPanic</password>
+        </server>
+        <server>
+			<!-- this is the ID of the corporate nexus snapshots folder for the MnS mule developed artefacts , the url is added as repository in the POM , match the ID and pass the credentials-->
+            <id>mns.corp.nexus.snapshot</id>
+            <username>sgonsalvez</username>
+            <password>KernelPanic</password>
+        </server>
+    </servers>
+    <mirrors>
+		<!-- This is the nexus proxy which is created for maven central repository and the soap UI maven plugin-->
+		<mirror>
+            <id>public.mirror.corp.nexus</id>
+            <mirrorOf>Central,smartbear-sweden-plugin-repository</mirrorOf>
+            <url>http://10.128.138.93:8081/nexus/content/repositories/public/</url>
+        </mirror>
+		<!--<mirror>
+            <id>mirror.mulesoft.releases</id>
+            <mirrorOf>mulesoft-releases</mirrorOf>
+            <url>http://10.128.138.93:8081/nexus/content/repositories/mulesoft-releases/</url>
+        </mirror>-->
+    </mirrors>
+    <profiles>
+		<!-- profile for each of the network created, the properties here are required to be overwritten from in the POM, but not needed for the local system build -->
+        <profile>
+            <id>salina</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <!-- C.I. properties  -->
+                <ciserver.http.host>hlxd0mw01.unix.marksandspencerdev.com</ciserver.http.host>
+                <mmc.url>http://hlxd0mw02.unix.marksandspencerdev.com:8585/mmc-3.5.2/api</mmc.url>
+                <mmc.serverGroup>ci</mmc.serverGroup>
+                <mmc.username>admin</mmc.username>
+                <mmc.password>admin</mmc.password>
+                <mmc.deploy.domain>dev</mmc.deploy.domain>
+				<!-- needed for the local laptop as the deploy will not happen to any server , and the SOAP UI test is not executed-->
+				<skip.deploy.ciserver>true</skip.deploy.ciserver>
+				<skip.soapui.test>true</skip.soapui.test>
+            </properties>
+        </profile>
+    </profiles>
+</settings>
