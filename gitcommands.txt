@@ -32,3 +32,67 @@ git config --global credential.helper store
 git config --unset --global credential.helper
 
 ##########################################################
+#################################Git ignore configuration
+
+https://github.com/github/gitignore 
+
+
+####################basic git commands
+############## shows all changes that are not staged	
+git diff 
+
+########### to see changes that are staged from the last commit
+git diff --staged 
+
+##### to by [pass git add (automatically stage it ) - the -a parameter does an automatic implicit stage
+git commit -a -m "comment)
+
+
+##############if you want git not to track a paticular file in the working directory - this is equivalent of putting stuff in the gitignore
+git rm --cached log/\*.log   ### for a whole folder of log files
+git rm --cached <file> 
+
+################## to rename a file
+git mv README.md README '#### this is equivalent to the below
+
+######
+$mv README.md README
+$ git rm README.md
+$ git add README
+
+
+###### commit history
+git log
+git log -p
+git log -p -2
+git log --stat ### shows you more detail on stats of commits
+git log --format ##########(you can format the log to own way)
+git log --since= 2 weeks
+git log --until=<date>
+git log -Sfunction_name (to show changes to a specific string - function etc)
+
+
+
+####adding a remote repository
+git remote add [shortname] [url]
+
+eg: git remote add bb http://github.com/blach
+#####
+so we could do git fetch bb
+
+##########One of the more helpful options is -p, which shows the difference introduced in each commit. You can also use -2, which limits the output to only the last two entries:
+
+
+############### shows which branch we are currnetly on
+ git log --oneline --decorate
+ 
+ 
+ ################checkout from branch 
+ git checkout testing
+ 
+#'##### switching branches changes the files in the working directory.
+
+
+###########display log information
+git log --oneline --decorate --graph --all
+ 

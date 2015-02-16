@@ -5,6 +5,10 @@
 http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/setup-repositories.html
 
 
+or use the rpm install 
+
+curl -L -O https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.3.noarch.rpm
+
 
 
 ##############Test for Elastic search

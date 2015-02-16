@@ -8473,6 +8473,10 @@ https://hlxd0mw01.unix.marksandspencerdev.com:18000/landed-cost-price-service/ap
 Invokation for FCI
 https://hlxd0mw01.unix.marksandspencerdev.com:18000/landed-cost-price-service/api/frontend/1/landed-cost-price?WayRefNumber=96119933456&StrokeNumber=8039&ColourCode=V0&BuyingRatioCode=760&SeasonType=SP15&Year=2015&DeptNumber=T25&SeriesNumber=M08928&PlannedFOBCostPrice=99.00&EUFabricCost=3.00&Currency=GBP&CountryOfOriginNumber=GB&ReprocessIndicator=H&DutyPreferenceIndicator=Y&TransitMethod=Z001&PriceIndicatorAtSize=X&DutyRate=4.10&ProductTypeAttributeCode=0102&FactoryNumber=1000002906&ItemLength=1&ItemWidth=2&ItemHeight=2&ItemVolumeUnit=M3&PrimarySizeIndex=S&SecondarySizeIndex=90&PlannedFOBCostPriceAtSize=12.00
 
+AUDIT API local
+http://localhost:18000/common/api/audit/1/entries?InterfaceId=123&MessageId=444
+
+
 ########## AWS
 http://ec2-54-154-89-92.eu-west-1.compute.amazonaws.com:8585/mmc-3.5.2-HF1/index.jsp
 
@@ -8662,3 +8666,14 @@ super shared location for Marks and Spencer
 My local Elastic Search Kibana
 http://192.168.56.40:9200 - sense console - http://192.168.56.40:9200/_plugin/marvel/sense/index.html
 http://192.168.56.40:5601 - Kibana console
+
+http://192.168.56.40:8080
+
+Marvel
+http://192.168.56.40:9200/_plugin/marvel/sense/index.html
+
+
+'################### Python command for jsonlint
+ python -m json.tool
+ 
+ https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.3.zip
