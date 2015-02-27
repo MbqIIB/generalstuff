@@ -8664,6 +8664,7 @@ super shared location for Marks and Spencer
 
 
 My local Elastic Search Kibana
+My local Elastic Search Kibana
 http://192.168.56.40:9200 - sense console - http://192.168.56.40:9200/_plugin/marvel/sense/index.html
 http://192.168.56.40:5601 - Kibana console
 
@@ -8677,3 +8678,20 @@ http://192.168.56.40:9200/_plugin/marvel/sense/index.html
  python -m json.tool
  
  https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.3.zip
+ 
+ 
+################## no hup and running process in background
+
+===========
+amit@server $ nohup amit.sh &
+[1] 21491
+amit@server $ Sending output to nohup.out
+===================
+
+Here 1 is the job id
+so to the command to bring it from back ground is
+
+fg %1
+here 1 is the job id
+
+D:\GIT\mule-etc\domains\dev

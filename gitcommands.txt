@@ -95,4 +95,26 @@ so we could do git fetch bb
 
 ###########display log information
 git log --oneline --decorate --graph --all
+
+
+
+############ create a branch
+git branch <name>
+
+###swithc to branch
+git checkout <branch name>
+
+##### merging changes from another branch to current branch
+## no commit - will just stage the files and fastforward will not show the history of the branches
+git merge origin/master --no-commit --no-ff
+
+
+
+## reset to branch or commit point
+git reset --hard <tag/branch/commit id>
+
+###to push the reset change to remote
+git push <reponame> -f
  
+ 
+ ###pull request

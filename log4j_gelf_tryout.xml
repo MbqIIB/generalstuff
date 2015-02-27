@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration debug="true" xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!--
+	The filename to which the filelog appenders writes must be edited to be based on
+	the name of this Mule app!
+	-->
+
+	<!--
+	The threshold levels for the console and filelog appenders can be customised by setting
+	the system properties log.threshold.console and log.threshold.filelog to one of the
+	supported values (trace, debug, info, warn, error, fatal, off).
+	If any of these system properties is not set then it defaults to debug.
+	-->
+
+	<appender name="async" class="org.apache.log4j.AsyncAppender">
+		<param name="blocking" value="false" />
+		<!-- in entries; 300000 = 500 entries per second for 10 minutes -->
+		<param name="bufferSize" value="300000" />
+		<appender-ref ref="console" />
+		<appender-ref ref="filelog" />
+		<appender-ref ref="gelf"/>
+		<appender-ref ref="graylog2"/>
+	</appender>
+
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<param name="threshold" value="${log.threshold.console}" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%-5p %d %t [%c] %x: %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="filelog" class="org.apache.log4j.RollingFileAppender">
+		<param name="threshold" value="${log.threshold.filelog}" />
+		<param name="append" value="true" />
+		<param name="bufferedIO" value="true" />
+		<!-- in KB, default is 8 -->
+		<param name="bufferSize" value="32" />
+		<param name="maxBackupIndex" value="20" />
+		<param name="maxFileSize" value="20MB" />
+		<param name="file" value="${mule.home}/logs/common-components.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%-5p %d %t [%c] %x: %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="gelf" class="gelf4j.log4j.GelfAppender">
+    	<param name="Threshold" value="INFO"/>
+    	<param name="host" value="192.168.56.60"/>
+   		<param name="port" value="12201"/>
+    	<param name="compressedChunking" value="false"/>
+   		<param name="defaultFields" value='{"host": "OverridenOriginHost", "environment": "DEV", "application": "MyAPP"}'/>
+    	<param name="additionalFields" value='{"thread_name": "threadName", "exception": "exception"}'/>
+	</appender>
+	
+	<appender name="graylog2" class="org.graylog2.log.GelfAppender">
+    	<param name="graylogHost" value="udp:192.168.56.60"/>
+    	<param name="graylogPort" value="12203"/>
+    	<param name="extractStacktrace" value="true"/>
+    	<param name="addExtendedInformation" value="true"/>
+    	<param name="facility" value="gelf-java"/>
+	    <param name="Threshold" value="INFO"/>
+	    <param name="additionalFields" value="{'environment': 'DEV', 'application': 'MyAPP'}"/>
+	    <layout class="org.apache.log4j.PatternLayout">
+        	<param name="ConversionPattern" value="%d |%t|%c{2}| %-5p - %m%n"/>
+  		  </layout>
+	</appender>
+
+	<appender name="syslog" class="org.apache.log4j.net.SyslogAppender">
+		<param name="threshold" value="error" />
+		<param name="facility" value="local1" />
+		<param name="facilityPrinting" value="true" />
+		<param name="syslogHost" value="localhost" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%-5p %d %t [%c] %x: %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="alertslog" class="org.apache.log4j.RollingFileAppender">
+		<param name="threshold" value="error" />
+		<param name="append" value="true" />
+		<param name="bufferedIO" value="true" />
+		<!-- in KB, default is 8: minimise delay due to buffering -->
+		<param name="bufferSize" value="1" />
+		<param name="maxBackupIndex" value="10" />
+		<param name="maxFileSize" value="20MB" />
+		<param name="file" value="${mule.home}/logs/common-components-alerts.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="conversionPattern" value="%-5p %d %t [%c] %x: %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.gigaspaces">
+		<level value="error" />
+	</logger>
+	<logger name="com.j_spaces">
+		<level value="error" />
+	</logger>
+	<logger name="com.marksandspencer">
+		<level value="debug" />
+	</logger>
+	<logger name="com.mulesoft">
+		<level value="info" />
+	</logger>
+	<logger name="com.opensys.cloveretl">
+		<level value="warn" />
+	</logger>
+	<logger name="com.sun.jini">
+		<level value="error" />
+	</logger>
+	<logger name="httpclient">
+		<level value="info" />
+	</logger>
+	<logger name="net.jini">
+		<level value="error" />
+	</logger>
+	<logger name="org.apache">
+		<level value="warn" />
+	</logger>
+	<logger name="org.apache.cxf">
+		<level value="warn" />
+	</logger>
+	<logger name="org.jetel">
+		<level value="warn" />
+	</logger>
+	<logger name="org.mortbay.jetty">
+		<level value="info" />
+	</logger>
+	<logger name="org.mule">
+		<level value="info" />
+	</logger>
+	<logger name="org.mule.api.processor.LoggerMessageProcessor">
+		<level value="debug" />
+	</logger>
+	<logger name="org.springframework">
+		<level value="info" />
+	</logger>
+	<logger name="org.springframework.beans.factory">
+		<level value="warn" />
+	</logger>
+	<logger name="org.springframework.context">
+		<level value="debug" />
+	</logger>
+	<logger name="Tracking">
+		<level value="warn" />
+	</logger>
+	<logger name="org.mule.module.apikit.MappingExceptionListener">
+		<level value="fatal" />
+	</logger>
+
+	<root>
+		<level value="info" />
+		<appender-ref ref="async" />
+		<appender-ref ref="syslog" />
+		<appender-ref ref="alertslog" />
+		<appender-ref ref="gelf"/>
+		<appender-ref ref="graylog2"/>
+	</root>
+
+</log4j:configuration>

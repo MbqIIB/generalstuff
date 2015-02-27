@@ -45,3 +45,76 @@ http://192.168.56.40:9200/megacorp/employee/_search?pretty
 megacorp is the index (like database)
 employee is the type  (like table)
 and if you mention 1 then that is the ID (document ID) document is uploaded as part of the ID - (This is like a row)
+
+
+
+
+#######################FINAL elastic search and KIBANA installation
+
+###Download elasticsearch-1.4.3.noarch.rpm from - check the latest version
+https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.4.4.noarch.rpm
+
+run rpm -ivh 
+
+
+
+
+#####Logstash -
+
+download the latest rpm package of logstash and run it
+
+##### Installation of REDIS
+download redis and use make to run - http://redis.io/download
+
+#######logstash elastic search configuration output
+http://www.logstash.net/docs/1.3.2/outputs/elasticsearch_http
+
+### this is for elastic search HTTP
+input { stdin { } }
+output {
+elasticsearch_http {
+    host => "192.168.56.40"
+        user => "admin"
+        password => "password"
+    }
+stdout { codec => rubydebug }
+}
+
+
+###### for multi cast  - BUT BEWARE THIS IS NOT WOEKING
+
+input { stdin { } }
+output {
+elasticsearch{
+	 host => "192.168.56.40"
+	 cluster => "elasticsearch"
+	 protocol => "node"
+	 node_name => "supersweet"
+    }
+stdout { codec => rubydebug }
+}
+
+########### file to elastic search
+input { 
+stdin { } 
+file {
+    path => "/opt/mule/logs/mule_ee.log"
+    start_position => "beginning"
+	sincedb_path => "/opt/logstash"
+    type => "mulemain"
+  }
+}
+output {
+elasticsearch_http {
+    host => "192.168.56.40"
+        user => "admin"
+        password => "password"
+    }
+stdout { codec => rubydebug }
+}
+
+
+################## migrating Kibana from 4.0.0 RC1 to 4.0.0 do this below ################
+BODY=`curl -XGET 'admin:password@localhost:9200/.kibana/config/4.0.0-rc1/_source'`; curl -XPUT "admin:password@localhost:9200/.kibana/config/4.0.0" -d "$BODY" && curl -XDELETE "admin:password@localhost:9200/.kibana/config/4.0.0-rc1"
+
+
