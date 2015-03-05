@@ -36,6 +36,10 @@ where 192.168.56.40 is the VM ip address
 http://192.168.56.40:9200/_plugin/marvel/sense/index.html
 
 
+####### plugin for elastic search security
+https://github.com/salyh/elastic-defender
+
+
 
 ###########searching
 
@@ -118,3 +122,42 @@ stdout { codec => rubydebug }
 BODY=`curl -XGET 'admin:password@localhost:9200/.kibana/config/4.0.0-rc1/_source'`; curl -XPUT "admin:password@localhost:9200/.kibana/config/4.0.0" -d "$BODY" && curl -XDELETE "admin:password@localhost:9200/.kibana/config/4.0.0-rc1"
 
 
+
+'#'##### http-basic auth  for elastic search######
+https://github.com/Asquera/elasticsearch-http-basic
+
+
+###############configuring Kibana 3
+Extract kibana-3.1.2.tar into the below folder
+under $ESHOME/plugins create a folder kibana/_site
+untar the contents fo the Kibana 3 version into this folder
+and access through http://ESaccess/_plugin/kibana
+
+
+############################ basic auth for Kibana using Tomcat - very basic stuff ######################
+http://shreyshivam.com/kibana-tomcat-authentication/
+
+Steps below
+1) Copy the below xml into WEB-INF folder under kibana - if folder not preset create
+<?xml version="1.0" encoding="ISO-8859-1" ?> <web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" version="2.4"> <security-constraint> <web-resource-collection> <web-resource-name>Kibana Dashboard</web-resource-name> <url-pattern>/*</url-pattern> </web-resource-collection> <auth-constraint> <role-name>manager-kibana</role-name> </auth-constraint> </security-constraint> <!-- Define the Login Configuration for this Application --> <login-config> <auth-method>BASIC</auth-method> <realm-name>Tomcat Manager Application</realm-name> </login-config> <!-- Security roles referenced by this web application --> <security-role> <description> The role that is required to access the Dashboard </description> <role-name>manager-kibana</role-name> </security-role> </web-app>
+
+2) add the following under tomcat/conf/tomcat-users.xml just before </tomcat-users>
+<role rolename="manager-kibana"/> <user username="username" password="password" roles="manager-kibana"/>
+
+
+#################### advanced authentication for Kibana 3 ########################################
+https://github.com/fangli/kibana-authentication-proxy  or https://github.com/stevengonsalvez/kibana-authentication-proxy
+
+
+
+################## remove save option from Kibana #######################
+http://stackoverflow.com/questions/25149680/remove-save-option-from-kibana
+
+
+######## INstallating node for centos - https://github.com/joyent/node/wiki/installing-node.js-via-package-manager
+
+curl -sL https://rpm.nodesource.com/setup | bash -
+yum install -y nodejs
+#optional
+yum install gcc-c++ make
+# or: yum groupinstall 'Development Tools'

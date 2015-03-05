@@ -117,4 +117,6 @@ git reset --hard <tag/branch/commit id>
 git push <reponame> -f
  
  
- ###pull request
+ ###checkout a pull request that has not merged
+ git fetch origin pull/ID/head:BRANCHNAME
+ git checkout BRANCHNAME
