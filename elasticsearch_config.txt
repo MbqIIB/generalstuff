@@ -11,15 +11,6 @@ curl -L -O https://download.elasticsearch.org/elasticsearch/elasticsearch/elasti
 
 
 
-##############Test for Elastic search
-curl -XGET 'http://192.168.56.40:9200/_count?pretty' -d '
-{
-    "query": {
-        "match_all": {}
-    }
-}
-'
-
 
 
 ###############To install Marvel plugin for the sense console
@@ -148,6 +139,8 @@ Steps below
 #################### advanced authentication for Kibana 3 ########################################
 https://github.com/fangli/kibana-authentication-proxy  or https://github.com/stevengonsalvez/kibana-authentication-proxy
 
+################### to configure per user based authentication - clone ############
+git fetch https://github.com/fangli/kibana-authentication-proxy refs/pull/18/head:NEWBRANCH
 
 
 ################## remove save option from Kibana #######################
@@ -161,3 +154,5 @@ yum install -y nodejs
 #optional
 yum install gcc-c++ make
 # or: yum groupinstall 'Development Tools'
+
+

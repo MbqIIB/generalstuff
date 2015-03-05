@@ -1,0 +1,6 @@
+## process manager fode node js applications
+
+https://github.com/Unitech/PM2/blob/development/ADVANCED_README.md#a10
+
+## installing node js via package manager
+https://github.com/joyent/node/wiki/installing-node.js-via-package-manager

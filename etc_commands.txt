@@ -1,0 +1,11 @@
+####get indices
+get /_cat/indices?v
+
+##############Test for Elastic search
+curl -XGET 'http://192.168.56.40:9200/_count?pretty' -d '
+{
+    "query": {
+        "match_all": {}
+    }
+}
+'
