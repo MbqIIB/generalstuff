@@ -8695,3 +8695,16 @@ fg %1
 here 1 is the job id
 
 D:\GIT\mule-etc\domains\dev
+
+
+
+###############permanent symlinks in path
+ou need to add it to your ~/.profile file.
+
+export PATH=$PATH:/path/to/dir
+Depending on what you're doing, you also may want to symlink to binaries:
+
+cd /usr/bin
+sudo ln -s /path/to/binary binary-name
+
+ln -s 

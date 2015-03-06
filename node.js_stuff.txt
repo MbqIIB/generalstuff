@@ -4,3 +4,12 @@ https://github.com/Unitech/PM2/blob/development/ADVANCED_README.md#a10
 
 ## installing node js via package manager
 https://github.com/joyent/node/wiki/installing-node.js-via-package-manager
+
+### http proxy using node js
+http://www.catonmat.net/http-proxy-in-nodejs
+
+
+
+####offline packaging of the project
+
+https://www.npmjs.com/package/offline-npm#readme

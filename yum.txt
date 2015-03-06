@@ -3,6 +3,9 @@ yum install -y mlocate
 yum install -y telnet
 yum install -y screen
 yum install -y vim
+yum install -y git
+yum update -y
+updatedb
 yum install -y gcc gcc-c++ gd gd-devel glibc glibc-common glibc-devel glibc-headers make automake httpd httpd-devel java-1.7.0-openjdk java-1.7.0-openjdk-devel wget tar vim nc libcurl-devel openssl-devel zlib-devel zlib patch readline readline-devel libffi-devel curl-devel
 
 https://packages.graylog2.org/graylog2-web-interface/graylog2-web-interface-0.92.4.tgz

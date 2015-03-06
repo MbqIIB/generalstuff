@@ -140,7 +140,7 @@ Steps below
 https://github.com/fangli/kibana-authentication-proxy  or https://github.com/stevengonsalvez/kibana-authentication-proxy
 
 ################### to configure per user based authentication - clone ############
-git fetch https://github.com/fangli/kibana-authentication-proxy refs/pull/18/head:NEWBRANCH
+git fetch https://github.com/fangli/kibana-authentication-proxy refs/pull/18/head:originalPull18
 
 
 ################## remove save option from Kibana #######################
@@ -154,5 +154,12 @@ yum install -y nodejs
 #optional
 yum install gcc-c++ make
 # or: yum groupinstall 'Development Tools'
+
+####### restrict people from configuring ###################
+ default_route     : '/dashboard/file/default.json',
+
+ 
+ ####latest kibana config used for dev
+ git clone -b pull18  https://github.com/stevengonsalvez/kibana-authentication-proxy.git
 
 
