@@ -1,0 +1,76 @@
+{
+  "title": "Welcome to the Marks and Spencer dashboard catalogue",
+  "services": {
+    "query": {
+      "list": {
+        "0": {
+          "query": "*",
+          "alias": "",
+          "color": "#7EB26D",
+          "id": 0,
+          "pin": false,
+          "type": "lucene"
+        }
+      },
+      "ids": [
+        0
+      ]
+    },
+    "filter": {
+      "list": {},
+      "ids": []
+    }
+  },
+  "rows": [
+    {
+      "title": "Intro",
+      "height": "700px",
+      "editable": false,
+      "collapse": false,
+      "collapsable": false,
+      "panels": [
+             {
+          "error": false,
+          "span": 12,
+          "editable": false,
+          "group": [
+            "default"
+          ],
+          "type": "text",
+          "mode": "markdown",
+          "content": "![kibana](img/mns.png) \n\n ### Welcome to Integration Kibana Dashboards. \nGlad you could make it. Happy to have you here! \n##### Requirements\n* **A good browser**  \n\n\n \n##### What do we have here\n*  We have a set of prebuilt dashboards:\n\n 1. [Integration Dashboard](index.html#/dashboard/file/integration.json).\n   2. [logstash Dashboard](index.html#/dashboard/file/logstash.json) \n *Oh yeah - None of the other dashboards is configured yet - so just go to the Integration dashboard*",
+          "style": {},
+          "status": "Stable"
+        }
+      ],
+      "notice": false
+    }
+  ],
+  "editable": false,
+  "index": {
+    "interval": "none",
+    "pattern": "[logstash-]YYYY.MM.DD",
+    "default": "_all",
+    "warm_fields": false
+  },
+  "style": "dark",
+  "failover": false,
+  "panel_hints": true,
+  "pulldowns": [],
+  "nav": [],
+  "loader": {
+    "save_gist": false,
+    "save_elasticsearch": true,
+    "save_local": true,
+    "save_default": true,
+    "save_temp": true,
+    "save_temp_ttl_enable": true,
+    "save_temp_ttl": "30d",
+    "load_gist": true,
+    "load_elasticsearch": true,
+    "load_elasticsearch_size": 20,
+    "load_local": true,
+    "hide": false
+  },
+  "refresh": false
+}

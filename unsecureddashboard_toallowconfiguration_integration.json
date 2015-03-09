@@ -1,0 +1,427 @@
+{
+  "title": "INTEGRATIONDASHBOARD",
+  "services": {
+    "query": {
+      "list": {
+        "0": {
+          "query": "*",
+          "alias": "",
+          "color": "#7EB26D",
+          "id": 0,
+          "pin": false,
+          "type": "lucene",
+          "enable": true
+        }
+      },
+      "ids": [
+        0
+      ]
+    },
+    "filter": {
+      "list": {
+        "0": {
+          "type": "time",
+          "field": "Header.CreatedTimestamp",
+          "from": "now-30d",
+          "to": "now",
+          "mandate": "must",
+          "active": true,
+          "alias": "",
+          "id": 0
+        }
+      },
+      "ids": [
+        0
+      ]
+    }
+  },
+  "rows": [
+    {
+      "title": "Options",
+      "height": "50px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 12,
+          "editable": false,
+          "group": [
+            "default"
+          ],
+          "type": "text",
+          "status": "Stable",
+          "mode": "markdown",
+          "content": "**Dashboard Usage Notes!**\n\n* There are time elements based in this dashboard - The time element is based on CreatedTimestamp (CME element).\n* If you want to adjust the time frame of all the pretty little pictures you see , there is a time filter button at the top of this screen -> select your appropriate time frame\n* If you want to change the look of the dashboard - click the cog at the right top of the  screen and select your style\n* All the elements in the dashboard will automatically get adjusted , based on the filter and the query up-top. The query syntax is based on [lucene] regex\n\n**Simple Usage example!**\nIf all you want is to get the data associated with a messageID\nJust go to the search bar and type in MessageId : <id> or MessageId: 3* or MessageId:12314* \n\n[lucene]:http://lucene.apache.org/core/2_9_4/queryparsersyntax.html",
+          "style": {},
+          "title": "Read This First"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "Graph",
+      "height": "250px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 5,
+          "editable": false,
+          "group": [
+            "default"
+          ],
+          "type": "terms",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "field": "Header.InterfaceId",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 100,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "vertical",
+          "chart": "pie",
+          "counter_pos": "above",
+          "title": "Interface_audit",
+          "spyable": false,
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": ""
+        },
+        {
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "group": [
+            "default"
+          ],
+          "type": "terms",
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "field": "Header.InterfaceId",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 100,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "title": "Audit information",
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": ""
+        },
+        {
+          "span": 3,
+          "editable": true,
+          "type": "trends",
+          "loadingEditor": false,
+          "ago": "15m",
+          "arrangement": "vertical",
+          "reverse": true,
+          "spyable": true,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "style": {
+            "font-size": "14pt"
+          },
+          "title": "trend"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "Interface_ID_Histogram",
+      "height": "200px",
+      "editable": false,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 12,
+          "editable": false,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "Header.InterfaceId",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 100,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "bar",
+          "counter_pos": "below",
+          "spyable": false,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "InterfaceId_bar"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "time_based",
+      "height": "200px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "span": 12,
+          "editable": true,
+          "type": "histogram",
+          "loadingEditor": false,
+          "mode": "count",
+          "time_field": "Header.CreatedTimestamp",
+          "value_field": null,
+          "x-axis": true,
+          "y-axis": true,
+          "scale": 1,
+          "y_format": "none",
+          "grid": {
+            "max": null,
+            "min": 0
+          },
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "annotate": {
+            "enable": false,
+            "query": "*",
+            "size": 20,
+            "field": "_type",
+            "sort": [
+              "_score",
+              "desc"
+            ]
+          },
+          "auto_int": true,
+          "resolution": 100,
+          "interval": "12h",
+          "intervals": [
+            "auto",
+            "1s",
+            "1m",
+            "5m",
+            "10m",
+            "30m",
+            "1h",
+            "3h",
+            "12h",
+            "1d",
+            "1w",
+            "1y"
+          ],
+          "lines": false,
+          "fill": 0,
+          "linewidth": 3,
+          "points": false,
+          "pointradius": 5,
+          "bars": true,
+          "stack": true,
+          "spyable": true,
+          "zoomlinks": true,
+          "options": true,
+          "legend": true,
+          "show_query": true,
+          "interactive": true,
+          "legend_counts": true,
+          "timezone": "utc",
+          "percentage": false,
+          "zerofill": true,
+          "derivative": false,
+          "tooltip": {
+            "value_type": "individual",
+            "query_as_alias": true
+          },
+          "title": "time_based_count"
+        }
+      ],
+      "notice": false
+    },
+    {
+      "title": "Events",
+      "height": "650px",
+      "editable": true,
+      "collapse": false,
+      "collapsable": true,
+      "panels": [
+        {
+          "error": false,
+          "span": 12,
+          "editable": true,
+          "group": [
+            "default"
+          ],
+          "type": "table",
+          "size": 100,
+          "pages": 5,
+          "offset": 0,
+          "sort": [
+            "_score",
+            "desc"
+          ],
+          "style": {
+            "font-size": "9pt"
+          },
+          "overflow": "min-height",
+          "fields": [
+            "Header.MessageId",
+            "Header.CreatedTimestamp",
+            "Header.SourceApplicationName",
+            "Header.PayloadName",
+            "Header.InterfaceName",
+            "Header.InterfaceId"
+          ],
+          "highlight": [],
+          "sortable": true,
+          "header": true,
+          "paging": true,
+          "spyable": true,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "field_list": true,
+          "status": "Stable",
+          "trimFactor": 300,
+          "normTimes": true,
+          "title": "Documents",
+          "all_fields": false,
+          "localTime": false,
+          "timeField": "@timestamp"
+        }
+      ],
+      "notice": false
+    }
+  ],
+  "editable": true,
+  "index": {
+    "interval": "none",
+    "pattern": "[logstash-]YYYY.MM.DD",
+    "default": "mule*",
+    "warm_fields": false
+  },
+  "style": "dark",
+  "failover": false,
+  "panel_hints": true,
+  "loader": {
+    "save_gist": false,
+    "save_elasticsearch": true,
+    "save_local": true,
+    "save_default": true,
+    "save_temp": true,
+    "save_temp_ttl_enable": true,
+    "save_temp_ttl": "30d",
+    "load_gist": true,
+    "load_elasticsearch": true,
+    "load_elasticsearch_size": 20,
+    "load_local": true,
+    "hide": false
+  },
+  "pulldowns": [
+    {
+      "type": "query",
+      "collapse": false,
+      "notice": false,
+      "query": "*",
+      "pinned": true,
+      "history": [
+        "*"
+      ],
+      "remember": 10,
+      "enable": true
+    },
+    {
+      "type": "filtering",
+      "collapse": false,
+      "notice": true,
+      "enable": true
+    }
+  ],
+  "nav": [
+    {
+      "type": "timepicker",
+      "collapse": false,
+      "notice": false,
+      "status": "Stable",
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ],
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "timefield": "Header.CreatedTimestamp",
+      "enable": true,
+      "now": true,
+      "filter_id": 0
+    }
+  ],
+  "refresh": false
+}

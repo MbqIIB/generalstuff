@@ -120,3 +120,6 @@ git push <reponame> -f
  ###checkout a pull request that has not merged
  git fetch origin pull/ID/head:BRANCHNAME
  git checkout BRANCHNAME
+ 
+ ###checkout a branch
+ git clone -b pull18  https://github.com/stevengonsalvez/kibana-authentication-proxy.git
