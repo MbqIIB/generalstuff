@@ -195,12 +195,12 @@
       "title": "Src_App_Count",
       "height": "150px",
       "editable": false,
-      "collapse": true,
+      "collapse": false,
       "collapsable": true,
       "panels": [
         {
           "error": false,
-          "span": 12,
+          "span": 8,
           "editable": false,
           "type": "terms",
           "loadingEditor": false,
@@ -230,6 +230,39 @@
           "tstat": "total",
           "valuefield": "",
           "title": "srcAppCount"
+        },
+        {
+          "error": false,
+          "span": 4,
+          "editable": true,
+          "type": "terms",
+          "loadingEditor": false,
+          "field": "Header.SourceApplicationName",
+          "exclude": [],
+          "missing": false,
+          "other": false,
+          "size": 20,
+          "order": "count",
+          "style": {
+            "font-size": "10pt"
+          },
+          "donut": false,
+          "tilt": false,
+          "labels": true,
+          "arrangement": "horizontal",
+          "chart": "table",
+          "counter_pos": "above",
+          "spyable": true,
+          "queries": {
+            "mode": "all",
+            "ids": [
+              0
+            ]
+          },
+          "tmode": "terms",
+          "tstat": "total",
+          "valuefield": "",
+          "title": "count_app"
         }
       ],
       "notice": false
@@ -379,7 +412,7 @@
   "index": {
     "interval": "none",
     "pattern": "[logstash-]YYYY.MM.DD",
-    "default": "mule*",
+    "default": "analytics-mule-dev*",
     "warm_fields": false
   },
   "style": "dark",
@@ -396,7 +429,7 @@
     "load_gist": false,
     "load_elasticsearch": false,
     "load_elasticsearch_size": 20,
-    "load_local": true,
+    "load_local": false,
     "hide": false
   },
   "pulldowns": [
