@@ -13,3 +13,6 @@ http://www.catonmat.net/http-proxy-in-nodejs
 ####offline packaging of the project
 
 https://www.npmjs.com/package/offline-npm#readme
+
+
+###checkout supervisor to restart process
