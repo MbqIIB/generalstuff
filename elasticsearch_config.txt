@@ -161,5 +161,9 @@ yum install gcc-c++ make
  
  ####latest kibana config used for dev
  git clone -b pull18  https://github.com/stevengonsalvez/kibana-authentication-proxy.git
+ 
+ 
+ curl -u admin:password  -s -XPOST 'http://localhost:9200/_bulk' --data-binary @txn_cme_audit_st.json
+ curl -u admin:password -XGET 'http://192.168.56.40:9200/_cat/indices?v'
 
 

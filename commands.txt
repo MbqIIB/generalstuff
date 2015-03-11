@@ -8645,6 +8645,13 @@ https://192.168.187.10:9090/
   013519-305316-139557-427746-147543-600534-166760-693099
   
   
+  p3006204
+  hostname : MSHUXMNSUKD0056.unix.marksandspencerdev.com
+  port : 12999
+  qmgr name : SAPTEST
+  channel : SAP.SVRCONN
+  
+  queue: SAP.INBOUND , SAP.OUTBOUND
   
  hostname : MSHUXMNSUKD0046.unix.marksandspencerdev.com
  port : 11901
@@ -8708,3 +8715,12 @@ cd /usr/bin
 sudo ln -s /path/to/binary binary-name
 
 ln -s 
+
+
+###########AML source addresses details
+107.23.127.59
+107.23.127.72
+54.246.130.105
+54.246.130.106
+54.246.130.100
+54.246.130.102
