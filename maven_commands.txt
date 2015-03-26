@@ -1,0 +1,5 @@
+# to list the dependencies
+mvn dependency:tree 
+
+###to skip unit test
+mvn install -Dmaven.test.skip=true     

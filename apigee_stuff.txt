@@ -1,0 +1,40 @@
+
+New way of doing grunt build and deploy (Adam)
+-----------------------------------------------------------------
+
+for a detailed description look in the readme in git https://github.com/DigitalInnovation/API-AMLBase
+
+First do the initial build
+•	make sure you have grunt and node.js (grunt) installed
+•	download the api bundle created in apigee
+•	add the Example-API-Gruntfile.js and Example-API-package.json (actually these were missing some things so use the grunt file.js from store-finder)
+•	add a env-config.js file - this can be copied from another API and then change the values of the endpoints for each different environment to match the api
+•	create the node modules by running npm install (this step will also need repeating when AML-BASE changes
+•	build and deploy the api by running grunt -env={env} --username=apigeeUsername --password=apigeePassword
+•	You can now add any common policies to the flow and when you do a build then they will be picked up
+Next create the api project in eclipse
+•	File -> new project -> General Project -> select the root of project on the file system
+Nb. all the common policies should be pulled in by the build
+
+Nb. and included variables will now be held in the Gruntfile.js under textReplacements
+
+Next add create a git repository and push the code to git, make sure that you create a git ignore file 
+
+Error handling —— 
+
+common variables - i.e.. ones that are used by common policies are held in file api-amp-base/AMLGrunt.js 
+You can configure the generic error handling policy to be something specific for your API, this can be done by editing the file and adding your values to be substituted at the end of the section result.defaultBaseParameterReplacement. Then commit to API-AMLBase, then do npm install from the command line of your project in order to update the file in the node_modules directory
+
+
+Swaggerisation
+——————————————
+
+•	Now create a swagger file to describe the API, currently there is no way (that i know of) to generate a swagger son file from an API 
+•	Download Adams swaggerisation project from gitlab https://git.devops.mnscorp.net/aml/swaggerisation/tree/master
+•	from the location of your install run npm install - this will download all the node modules required for the app to run
+•	verify that your swagger file is valid by running the following eg. >node swagger-verify.js APIs/inventory.json
+•	it is not possible to generate automated tests from a swagger file. Instead ….
+
+
+#RAML to swagger stuff
+https://github.com/BulandMalik/RAML2Swagger

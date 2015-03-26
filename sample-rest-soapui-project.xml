@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project activeEnvironment="Default" name="landed-cost-price-service" resourceRoot="" soapui-version="4.6.4" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="TestSuite" value="&lt;all>"/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="soapui-setings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="Save Project" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="TestCase" value="&lt;all>"/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="domain mon" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://${#Project#ENDPOINT_HOSTNAME}:19000</con:endpoint></con:endpoints><con:resource name="" path="/mon"><con:settings/><con:parameters/><con:method name="" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/plain</con:mediaType><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${#Project#ENDPOINT_HOSTNAME}:19000</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="backend api mon" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://${#Project#ENDPOINT_HOSTNAME}:19000</con:endpoint></con:endpoints><con:resource name="" path="/${#Project#ENDPOINT_APP_ROOT_PATH}/mon/api/backend/1"><con:settings/><con:parameters/><con:method name="" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>text/plain</con:mediaType><con:status>404</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/plain;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${#Project#ENDPOINT_HOSTNAME}:19000</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="frontend api mon" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://${#Project#ENDPOINT_HOSTNAME}:19000</con:endpoint></con:endpoints><con:resource name="" path="/${#Project#ENDPOINT_APP_ROOT_PATH}/mon/api/frontend/1"><con:settings/><con:parameters/><con:method name="" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/plain;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${#Project#ENDPOINT_HOSTNAME}:19000</con:endpoint><con:request/><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="backend api" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://${#Project#ENDPOINT_HOSTNAME}:18000</con:endpoint></con:endpoints><con:resource name="" path="/${#Project#ENDPOINT_APP_ROOT_PATH}/api/backend/1/landed-cost-price"><con:settings/><con:parameters/><con:method name="" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/><con:element>ZGMM_LANDED_COST_CAL</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/xml</con:mediaType><con:status>401 415 500</con:status><con:params/><con:element>message</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/xml</con:mediaType><con:params/><con:element>ZGMM_LANDED_COST_CAL</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/xml</con:mediaType><con:status>200</con:status><con:params/><con:element>ZGMM_LANDED_COST_CAL</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/plain</con:mediaType><con:status>404</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ENDPOINT_HOSTNAME}:18000</con:endpoint><con:request><![CDATA[<ZGMM_LANDED_COST_CAL>
+	<tables>
+		<I_PRICE_DATA>
+			<row>
+				<ZZWAYREFNO>910002</ZZWAYREFNO>
+				<ZZSTROKE>8039A</ZZSTROKE>
+				<ZZCOLORCDE>V0</ZZCOLORCDE>
+				<ZZBUYRATIO>768</ZZBUYRATIO>
+				<SAISO>SP14</SAISO>
+				<SAISJ>2014</SAISJ>
+				<EKGRP>T25</EKGRP>
+				<LIFNR1>M00037</LIFNR1>
+				<ZZNETPR>15.00</ZZNETPR>
+				<ZZEUFABCST>1.00</ZZEUFABCST>
+				<WAERS>GBP</WAERS>
+				<URZLA>GB</URZLA>
+				<ZZREPROCESS_IND>H</ZZREPROCESS_IND>
+				<ZZDUTYPRE_IND>N</ZZDUTYPRE_IND>
+				<TRAGR>Z001</TRAGR>
+				<ZZSIZEPRIND>1</ZZSIZEPRIND>
+				<ZZDUTYRATE>0.00</ZZDUTYRATE>
+				<ZZLAENG>0.000</ZZLAENG>
+				<ZZBREIT>0.000</ZZBREIT>
+				<ZZHOEHE>0.000</ZZHOEHE>
+				<ZZVOLUM>0.000</ZZVOLUM>
+				<ZZVOLEH>M3</ZZVOLEH>
+				<ZZLANDCSTHDR>0.00</ZZLANDCSTHDR>
+				<EXTWG>301</EXTWG>
+				<ZZPRIINDX>34</ZZPRIINDX>
+				<ZZNETPRSIZE>15.00</ZZNETPRSIZE>
+				<ZZLANDCSTLINE>0.00</ZZLANDCSTLINE>
+				<ZZEUFABCSTLINE>1.00</ZZEUFABCSTLINE>
+			</row>
+			<row>
+				<ZZWAYREFNO>910002</ZZWAYREFNO>
+				<ZZSTROKE>8039A</ZZSTROKE>
+				<ZZCOLORCDE>V0</ZZCOLORCDE>
+				<ZZBUYRATIO>768</ZZBUYRATIO>
+				<SAISO>SP14</SAISO>
+				<SAISJ>2014</SAISJ>
+				<EKGRP>T25</EKGRP>
+				<LIFNR1>M00037</LIFNR1>
+				<ZZNETPR>15.00</ZZNETPR>
+				<ZZEUFABCST>1.00</ZZEUFABCST>
+				<WAERS>GBP</WAERS>
+				<URZLA>GB</URZLA>
+				<ZZREPROCESS_IND>H</ZZREPROCESS_IND>
+				<ZZDUTYPRE_IND>N</ZZDUTYPRE_IND>
+				<TRAGR>Z001</TRAGR>
+				<ZZSIZEPRIND>1</ZZSIZEPRIND>
+				<ZZDUTYRATE>0.00</ZZDUTYRATE>
+				<ZZLAENG>0.000</ZZLAENG>
+				<ZZBREIT>0.000</ZZBREIT>
+				<ZZHOEHE>0.000</ZZHOEHE>
+				<ZZVOLUM>0.000</ZZVOLUM>
+				<ZZVOLEH>M3</ZZVOLEH>
+				<ZZLANDCSTHDR>0.00</ZZLANDCSTHDR>
+				<EXTWG>301</EXTWG>
+				<ZZPRIINDX>34</ZZPRIINDX>
+				<ZZNETPRSIZE>15.00</ZZNETPRSIZE>
+				<ZZLANDCSTLINE>0.00</ZZLANDCSTLINE>
+				<ZZEUFABCSTLINE>1.00</ZZEUFABCSTLINE>
+			</row>
+		</I_PRICE_DATA>
+	</tables>
+</ZGMM_LANDED_COST_CAL>
+]]></con:request><con:credentials><con:username>${#Project#ENDPOINT_USERNAME}</con:username><con:password>${#Project#ENDPOINT_PASSWORD}</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:RestService" wadlVersion="http://wadl.dev.java.net/2009/02" name="frontend api" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://${#Project#ENDPOINT_HOSTNAME}:18000</con:endpoint></con:endpoints><con:resource name="" path="/${#Project#ENDPOINT_APP_ROOT_PATH}/api/frontend/1/landed-cost-price"><con:settings/><con:parameters><con:parameter><con:name>WayRefNumber</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>StrokeNumber</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>ColourCode</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>BuyingRatioCode</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>SeasonType</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>Year</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>DeptNumber</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>SeriesNumber</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>PlannedFOBCostPrice</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>EUFabricCost</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>Currency</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>CountryOfOriginNumber</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>ReprocessIndicator</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>DutyPreferenceIndicator</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>TransitMethod</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>PriceIndicatorAtSize</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>DutyRate</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>ProductTypeAttributeCode</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>PrimarySizeIndex</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>SecondarySizeIndex</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter><con:parameter><con:name>CreatedTimestamp</con:name><con:value/><con:style>QUERY</con:style><con:default/><con:description xsi:nil="true"/></con:parameter></con:parameters><con:method name="" method="GET"><con:settings/><con:parameters/><con:representation type="FAULT"><con:mediaType>application/json</con:mediaType><con:status>400 500</con:status><con:params/><con:element xmlns:lan="https://localhost/landed-cost-price-service/api/frontend/1/landed-cost-price">lan:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json;charset=UTF-8</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:lan="https://localhost/landed-cost-price-service/api/frontend/1/landed-cost-price">lan:Response</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/plain</con:mediaType><con:status>404</con:status><con:params/><con:element>data</con:element></con:representation><con:request name="Request 1" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ENDPOINT_HOSTNAME}:18000</con:endpoint><con:request/><con:credentials><con:username>${#Project#ENDPOINT_USERNAME}</con:username><con:password>${#Project#ENDPOINT_PASSWORD}</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="StrokeNumber" value="8039"/>
+  <con:entry key="SeriesNumber" value="M0135"/>
+  <con:entry key="ProductTypeAttributeCode" value="1401"/>
+  <con:entry key="PlannedFOBCostPrice" value="30.00"/>
+  <con:entry key="CreatedTimestamp" value="2014-01-01T20:20:20"/>
+  <con:entry key="SecondarySizeIndex" value="XXL"/>
+  <con:entry key="WayRefNumber" value="181232"/>
+  <con:entry key="DeptNumber" value="T25"/>
+  <con:entry key="DutyRate" value="4.40"/>
+  <con:entry key="BuyingRatioCode" value="760"/>
+  <con:entry key="PrimarySizeIndex" value="M"/>
+  <con:entry key="EUFabricCost" value="7.00"/>
+  <con:entry key="Year" value="2015"/>
+  <con:entry key="DutyPreferenceIndicator" value="Y"/>
+  <con:entry key="ColourCode" value="V0"/>
+  <con:entry key="ReprocessIndicator" value="H"/>
+  <con:entry key="TransitMethod" value="Z001"/>
+  <con:entry key="PriceIndicatorAtSize" value="0"/>
+  <con:entry key="CountryOfOriginNumber" value="GB"/>
+  <con:entry key="Currency" value="GBP"/>
+  <con:entry key="SeasonType" value="SU15"/>
+</con:parameters><con:parameterOrder><con:entry>WayRefNumber</con:entry><con:entry>StrokeNumber</con:entry><con:entry>ColourCode</con:entry><con:entry>BuyingRatioCode</con:entry><con:entry>SeasonType</con:entry><con:entry>Year</con:entry><con:entry>DeptNumber</con:entry><con:entry>SeriesNumber</con:entry><con:entry>PlannedFOBCostPrice</con:entry><con:entry>EUFabricCost</con:entry><con:entry>Currency</con:entry><con:entry>CountryOfOriginNumber</con:entry><con:entry>ReprocessIndicator</con:entry><con:entry>DutyPreferenceIndicator</con:entry><con:entry>TransitMethod</con:entry><con:entry>PriceIndicatorAtSize</con:entry><con:entry>DutyRate</con:entry><con:entry>ProductTypeAttributeCode</con:entry><con:entry>PrimarySizeIndex</con:entry><con:entry>SecondarySizeIndex</con:entry><con:entry>CreatedTimestamp</con:entry></con:parameterOrder></con:request></con:method></con:resource></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="frontend ws" type="wsdl" bindingName="{http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/v1}LandedCostPriceBinding-SOAP11HTTP-v1" soapVersion="1_1" anonymous="optional" definition="file:/Users/adamdavis/git/mule-apps/landed-cost-price-service/src/main/resources/LandedCostPrice.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/adamdavis/git/mule-apps/landed-cost-price-service/src/main/resources/LandedCostPrice.wsdl"><con:part><con:url>file:/Users/adamdavis/git/mule-apps/landed-cost-price-service/src/main/resources/LandedCostPrice.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="LandedCostPrice" targetNamespace="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/v1" xmlns:tns="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/v1" xmlns:header="marksspencer.com/is/2009/schemas/envelope/" xmlns:request="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/request/v1/" xmlns:response="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/response/v1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soapbind="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:documentation>Version 1.0</wsdl:documentation>
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/v1">
+      <xsd:import namespace="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/request/v1/" schemaLocation="LandedCostPriceRequest_v1.xsd"/>
+      <xsd:import namespace="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/response/v1/" schemaLocation="LandedCostPriceResponse_v1.xsd"/>
+      <xsd:import namespace="marksspencer.com/is/2009/schemas/envelope/" schemaLocation="MnSHeader.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="LandedCostPriceRequest">
+    <wsdl:part name="LandedCostPriceRequest" element="request:LandedCostPriceRequest"/>
+  </wsdl:message>
+  <wsdl:message name="LandedCostPriceResponse">
+    <wsdl:part name="LandedCostPriceResponse" element="response:LandedCostPriceResponse"/>
+  </wsdl:message>
+  <wsdl:message name="Header">
+    <wsdl:part name="Header" element="header:Header"/>
+  </wsdl:message>
+  <wsdl:portType name="LandedCostPricePortType">
+    <wsdl:operation name="LandedCostPrice">
+      <wsdl:input message="tns:LandedCostPriceRequest"/>
+      <wsdl:output message="tns:LandedCostPriceResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LandedCostPriceBinding-SOAP11HTTP-v1" type="tns:LandedCostPricePortType">
+    <soapbind:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="LandedCostPrice">
+      <soapbind:operation soapAction="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice"/>
+      <wsdl:input>
+        <soapbind:header message="tns:Header" part="Header" use="literal"/>
+        <soapbind:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soapbind:header message="tns:Header" part="Header" use="literal"/>
+        <soapbind:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LandedCostPrice-SOAP11HTTP-v1">
+    <wsdl:port name="LandedCostPricePort-SOAP11HTTP-v1" binding="tns:LandedCostPriceBinding-SOAP11HTTP-v1">
+      <soapbind:address location="http://localhost:8080/LandedCostPrice-SOAP11HTTP-v1"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/Users/adamdavis/git/mule-apps/landed-cost-price-service/src/main/resources/LandedCostPriceRequest_v1.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2015 sp2 (http://www.altova.com) by steven gonsalvez (Marksandspencer)-->
+<!--Author: Steven Gonsalvez
+Revision: 1.0
+Date: 07-01-2015
+Revision History
+0.0.1	07.01.15	Steven G	Initial Version-->
+<xs:schema targetNamespace="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/request/v1/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mns="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/request/v1/">
+  <xs:element name="LandedCostPriceRequest" type="mns:LandedCostPriceRequestType">
+    <xs:annotation>
+      <xs:documentation>This schema represents the container for Landed Cost Price Callout Request</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="LandedCostPriceRequestType">
+    <xs:sequence>
+      <xs:element name="WayRefNumber" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Way Reference No (SAP ZZWAYREFNO)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="BUName" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Business Unit Name (SAP ZZBUNAME)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ItemCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Item Code (SAP ZZITEMCODE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="StrokeNumber" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Stroke Number (SAP ZZSTROKE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ColourCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Color Code (SAP ZZCOLORCDE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PrimarySizeRange" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Primary size Range (SAP ZZPRISIZRNG)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SecondarySizeRange" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Secondary size Range (SAP ZZSECSIZRNG)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="BuyingRatioCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Buying Ratio (SAP ZZBUYRATIO)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SeasonType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Season Category (SAP SAISO)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Year" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Season Year (SAP SAISJ)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:pattern value="[1-2]{1}[0-9]{1}[0-9]{1}[0-9]{1}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DeptNumber" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Purchasing Group (SAP EKGRP)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SubDeptCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Sub Department (SAP ZZSUBDEPT)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="RangeCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Range Code (SAP ZZRNGCODE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SeriesNumber" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Account Number of Vendor or Creditor (Series Number) (SAP LIFNR1)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="FactoryNumber" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Account Number of Vendor or Creditor (Factory Number) (SAP LIFNR2)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ArticleNumber" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Article Number (SAP MATNR)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PlannedFOBCostPrice" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Planned FOB Cost Price (SAP ZZNETPR)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EUFabricCost" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>EU Fabric Cost (SAP ZZEUFABCST)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Currency" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Currency Key (SAP WAERS)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="FabricCountryOfOrigin" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Fabric Country of origin (SAP ZZFABCOO)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CountryOfOriginNumber" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Country of origin of the article (SAP URZLA)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ReprocessIndicator" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Reprocessing Complexity (SAP ZZREPROCESS_IND)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+            <xs:enumeration value="Y"/>
+            <xs:enumeration value="N"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DutyPreferenceIndicator" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Duty Preferential Status (SAP ZZDUTYPRE_IND)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+            <xs:enumeration value="Y"/>
+            <xs:enumeration value="N"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TransitMethod" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Transportation Group (SAP TRAGR)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PriceIndicatorAtSize" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Size Level Price Active Indicator (SAP ZZSIZEPRIND)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CommodityCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Commodity Code/Import Code Number for Foreign Trade (SAP ZZCCN)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DutyRate" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Custom Duty Rate (SAP ZZDUTYRATE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ItemLength" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Length (SAP ZZLAENG)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemWidth" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Width (SAP ZZBREIT)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemHeight" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Height (SAP ZZHOEHE)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemLinearUnit" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Unit of Dimension for Length/Width/Height (SAP ZZMEABM)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemVolume" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Volume (SAP ZZVOLUM)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemVolumeUnit" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Volume unit (SAP ZZVOLEH)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LandedCostPriceAtGenericArticle" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Landed Cost Generic Article level (SAP ZZLANDCSTHDR)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LicensedCharacterAttributeTypeCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Defined by IS-H General Field with Length 2, for Function Modules (SAP ZZROYATTBG)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LicensedCharacterAttributeCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Licensed Character (SAP ZZROYLATTCDE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ProductTypeAttributeTypeCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Defined by IS-H, General Field with Length 2, for Function Modules (SAP ZZPRDTYPCDE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ProductTypeAttributeCode" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>External Merchandise Category (SAP EXTWG)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element ref="mns:Variant" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>extension area for the variants of the generic article</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Variant" type="mns:VariantType">
+    <xs:annotation>
+      <xs:documentation>This segment is populated if the article has variants , the segment is repeated for each variant</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="VariantType">
+    <xs:sequence>
+      <xs:element name="PrimarySizeIndex" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Primary Size Index for this variant (SAP ZZPRIINDX). Contrary to what the parameter name might suggest, this is a string.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="99"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SecondarySizeindex" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Secondary size Index for this variant (SAP ZZSECINDX). Contrary to what the parameter name might suggest, this is a string.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="99"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PlannedFOBCostPriceAtSize" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Planned FOB Cost Price at Size level for this variant (SAP ZZNETPRSIZE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LandedCostPriceAtSize" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Size level Landed Cost for this variant (SAP ZZLANDCSTLINE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EUFabricCostAtSize" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>EU fabric cost line for this variant (SAP ZZEUFABCSTLINE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/adamdavis/git/mule-apps/landed-cost-price-service/src/main/resources/LandedCostPriceResponse_v1.xsd</con:url><con:content><![CDATA[<!--edited with XMLSpy v2015 sp2 (http://www.altova.com) by steven gonsalvez (Marksandspencer)-->
+<!--Author: Steven Gonsalvez
+Revision: 1.0
+Date: 07-01-2015
+Revision History
+0.0.1	07.01.15	Steven G	Initial Version-->
+<xs:schema targetNamespace="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/response/v1/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mns="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/response/v1/">
+  <xs:element name="LandedCostPriceResponse" type="mns:LandedCostPriceResponseType">
+    <xs:annotation>
+      <xs:documentation>This schema represents the container for the response of the Landed Cost Price Callout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="LandedCostPriceResponseType">
+    <xs:sequence>
+      <xs:element name="WayRefNumber" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Way Reference No (SAP ZZWAYREFNO)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="BUName" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Business Unit Name (SAP ZZBUNAME)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="30"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ItemCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Item Code (SAP ZZITEMCODE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="StrokeNumber" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Stroke Number (SAP ZZSTROKE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ColourCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Color Code (SAP ZZCOLORCDE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PrimarySizeRange" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Primary size Range (SAP ZZPRISIZRNG)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SecondarySizeRange" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Secondary size Range (SAP ZZSECSIZRNG)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="BuyingRatioCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Buying Ratio (SAP ZZBUYRATIO)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SeasonType" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Season Category (SAP SAISO)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Year" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Season Year (SAP SAISJ)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:pattern value="[1-2]{1}[0-9]{1}[0-9]{1}[0-9]{1}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DeptNumber" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Purchasing Group (SAP EKGRP)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SubDeptCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Sub Department (SAP ZZSUBDEPT)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="RangeCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Range Code (SAP ZZRNGCODE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SeriesNumber" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Account Number of Vendor or Creditor (Series Number) (SAP LIFNR1)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="FactoryNumber" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Account Number of Vendor or Creditor (Factory Number) (SAP LIFNR2)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ArticleNumber" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Article Number (SAP MATNR)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PlannedFOBCostPrice" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Planned FOB Cost Price (SAP ZZNETPR)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EUFabricCost" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>EU Fabric Cost (SAP ZZEUFABCST)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Currency" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Currency Key (SAP WAERS)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="5"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="FabricCountryOfOrigin" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Fabric Country of origin (SAP ZZFABCOO)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CountryOfOriginNumber" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Country of origin of the article (SAP URZLA)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="3"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ReprocessIndicator" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Reprocessing Complexity (SAP ZZREPROCESS_IND)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+            <xs:enumeration value="Y"/>
+            <xs:enumeration value="N"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DutyPreferenceIndicator" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Duty Preferential Status (SAP ZZDUTYPRE_IND)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+            <xs:enumeration value="Y"/>
+            <xs:enumeration value="N"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="TransitMethod" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Transportation Group (SAP TRAGR)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PriceIndicatorAtSize" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Size Level Price Active Indicator (SAP ZZSIZEPRIND)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="1"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="CommodityCode" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Commodity Code/Import Code Number for Foreign Trade (SAP ZZCCN)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="17"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="DutyRate" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Custom Duty Rate (SAP ZZDUTYRATE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ItemLength" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Length (SAP ZZLAENG)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemWidth" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Width</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemHeight" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Height (SAP ZZHOEHE)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemLinearUnit" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Unit of Dimension for Length/Width/Height (SAP ZZMEABM)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemVolume" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Volume (SAP ZZVOLUM)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ItemVolumeUnit" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Volume unit (SAP ZZVOLEH)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="LandedCostPriceAtGenericArticle" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Landed Cost Generic Article level (SAP ZZLANDCSTHDR)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LicensedCharacterAttributeTypeCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Defined by IS-H General Field with Length 2, for Function Modules (SAP ZZROYATTBG)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LicensedCharacterAttributeCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Licensed Character (SAP ZZROYLATTCDE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="8"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ProductTypeAttributeTypeCode" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Defined by IS-H, General Field with Length 2, for Function Modules (SAP ZZPRDTYPCDE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ProductTypeAttributeCode" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>External Merchandise Category (SAP EXTWG)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="18"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element ref="mns:Variant" minOccurs="0" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation>extension area for the variants of the generic article</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Variant" type="mns:VariantType">
+    <xs:annotation>
+      <xs:documentation>This segment is populated if the article has variants , the segment is repeated for each variant</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="VariantType">
+    <xs:sequence>
+      <xs:element name="PrimarySizeIndex" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Primary Size Index for this variant (SAP ZZPRIINDX). Contrary to what the parameter name might suggest, this is a string.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="99"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="SecondarySizeindex" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Secondary size Index for this variant (SAP ZZSECINDX). Contrary to what the parameter name might suggest, this is a string.</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:maxLength value="99"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="PlannedFOBCostPriceAtSize" minOccurs="1" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Planned FOB Cost Price at Size level for this variant (SAP ZZNETPRSIZE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="LandedCostPriceAtSize" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>Size level Landed Cost for this variant (SAP ZZLANDCSTLINE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EUFabricCostAtSize" minOccurs="0" maxOccurs="1">
+        <xs:annotation>
+          <xs:documentation>EU fabric cost line for this variant (SAP ZZEUFABCSTLINE)</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="11"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/Users/adamdavis/git/mule-apps/landed-cost-price-service/src/main/resources/MnSHeader.xsd</con:url><con:content><![CDATA[<!--Author: J Douch
+Revision: 1.0.1
+Date: 07-07-2009
+Revision History
+0.0.1	05.04.09	J Douch	Abstracted Header to a separate schema to provide insulation of changes to include individual schemas
+1.0.0	13.04.09	J Douch	Added Extension to integration header to provide common extension support
+1.0.1 07.07.09	J Douch	Changed IntegrationExtensionType to of type "any".
+ Description:
+Message Envelope used for all integration messages.-->
+<xs:schema targetNamespace="marksspencer.com/is/2009/schemas/envelope/" elementFormDefault="unqualified" attributeFormDefault="unqualified" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mns="marksspencer.com/is/2009/schemas/envelope/">
+  <xs:element name="Header" type="mns:HeaderType">
+    <xs:annotation>
+      <xs:documentation>This schema represents the container for the header information of the common message envelope.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="HeaderType">
+    <xs:sequence>
+      <xs:element name="MessageId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>A unique identifier of the message provided by source application and should be of format.  Format should be "SourceSystemName-SystemDefinedUID" or UUID</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CorrelationId" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Application defined correlation id - used for request response interfaces only</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="CreatedTimestamp" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation>The timestamp of when the message was created</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="SourceApplicationName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Name of the sending application</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InterfaceId" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reference to the RICEF IRI value assigned to the interface e.g. IR005</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="InterfaceName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Reference to the name assigned to the interface in the RICEF.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="PayloadName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Name of the payload type present in the message.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BatchMessageCount" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>Number of GBO’s or Common Data Models present within the message.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BatchRecordCount" type="xs:int">
+        <xs:annotation>
+          <xs:documentation>number of individual business records within the batch e.g. total number of purchase orders.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element ref="mns:IntegrationExtension" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>extension area for the integration processing only</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="IntegrationExtension" type="mns:IntegrationExtensionType">
+    <xs:annotation>
+      <xs:documentation>The integration extension object is a container for any additional non-specified data content that may be used for local processing only i.e. within the boundaries of the applications themselves such as SAP PI and MS. The container can also be used to store additional header metadata that is not present within the core header elements.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="IntegrationExtensionType">
+    <xs:sequence>
+      <xs:any namespace="##any" processContents="skip" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/LandedCostPrice-SOAP11HTTP-v1</con:endpoint></con:endpoints><con:operation isOneWay="false" action="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice" name="LandedCostPrice Operation" bindingOperationName="LandedCostPrice" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:description>/${#Project#ENDPOINT_APP_ROOT_PATH}/ws/frontend/1</con:description><con:settings/><con:call name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://${#Project#ENDPOINT_HOSTNAME}:18000/${#Project#ENDPOINT_APP_ROOT_PATH}/ws/frontend/1/LandedCostPrice-SOAP11HTTP-v1</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:env="marksspencer.com/is/2009/schemas/envelope/" xmlns:v1="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice/request/v1/">
+   <soapenv:Header>
+      <env:Header>
+         <MessageId>1234</MessageId>
+         <CorrelationId>1234</CorrelationId>
+         <CreatedTimestamp>2002-05-30T09:00:00</CreatedTimestamp>
+         <SourceApplicationName>test-app</SourceApplicationName>
+         <InterfaceId>1</InterfaceId>
+         <InterfaceName>intf-name</InterfaceName>
+         <PayloadName>payload-name</PayloadName>
+         <BatchMessageCount>10</BatchMessageCount>
+         <BatchRecordCount>10</BatchRecordCount>
+      </env:Header>
+   </soapenv:Header>
+   <soapenv:Body>
+      <v1:LandedCostPriceRequest>
+         <WayRefNumber>1</WayRefNumber>
+         <SeasonType>1</SeasonType>
+         <Year>2014</Year>
+         <DeptNumber>1</DeptNumber>
+         <SeriesNumber>1</SeriesNumber>
+         <PlannedFOBCostPrice>1</PlannedFOBCostPrice>
+         <Currency>GBP</Currency>
+         <CountryOfOriginNumber>1</CountryOfOriginNumber>
+         <TransitMethod>1</TransitMethod>
+         <PriceIndicatorAtSize>1</PriceIndicatorAtSize>
+         <ProductTypeAttributeCode>1</ProductTypeAttributeCode>
+      </v1:LandedCostPriceRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:username>${#Project#ENDPOINT_USERNAME}</con:username><con:password>${#Project#ENDPOINT_PASSWORD}</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.marksandspencer.com/wsdl/services/sap/landedcostprice"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite name="TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="domain mon" searchProperties="true" id="c7b13069-2c19-49a6-97cf-a1d9c3f02932"><con:settings/><con:testStep type="restrequest" name="mon http request"><con:settings/><con:config service="domain mon" resourcePath="/mon" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="mon http request" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${#Project#ENDPOINT_HOSTNAME}:19000</con:endpoint><con:request/><con:assertion type="Invalid HTTP Status Codes" name="Invalid HTTP Status Codes"><con:configuration><codes>400,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,500,501,502,503,504,505</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains"><con:configuration><token>OK</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="backend api" searchProperties="true" id="9923a105-6dcf-4511-a19a-b3ee9075c61e"><con:settings/><con:testStep type="restrequest" name="mon http request"><con:settings/><con:config service="backend api mon" resourcePath="/${#Project#ENDPOINT_APP_ROOT_PATH}/mon/api/backend/1" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="mon http request" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${#Project#ENDPOINT_HOSTNAME}:19000</con:endpoint><con:request/><con:assertion type="Invalid HTTP Status Codes" name="Invalid HTTP Status Codes"><con:configuration><codes>400,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,500,501,502,503,504,505</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains success"><con:configuration><token>"success"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username/><con:password/><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="backend api https request"><con:settings/><con:config service="backend api" resourcePath="/${#Project#ENDPOINT_APP_ROOT_PATH}/api/backend/1/landed-cost-price" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="backend api https request" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ENDPOINT_HOSTNAME}:18000</con:endpoint><con:request><![CDATA[<ZGMM_LANDED_COST_CAL>
+	<tables>
+		<I_PRICE_DATA>
+			<row>
+				<ZZWAYREFNO>910002</ZZWAYREFNO>
+				<ZZSTROKE>8039A</ZZSTROKE>
+				<ZZCOLORCDE>V0</ZZCOLORCDE>
+				<ZZBUYRATIO>768</ZZBUYRATIO>
+				<SAISO>SP14</SAISO>
+				<SAISJ>2014</SAISJ>
+				<EKGRP>T25</EKGRP>
+				<LIFNR1>M00037</LIFNR1>
+				<ZZNETPR>15.00</ZZNETPR>
+				<ZZEUFABCST>1.00</ZZEUFABCST>
+				<WAERS>GBP</WAERS>
+				<URZLA>GB</URZLA>
+				<ZZREPROCESS_IND>H</ZZREPROCESS_IND>
+				<ZZDUTYPRE_IND>N</ZZDUTYPRE_IND>
+				<TRAGR>Z001</TRAGR>
+				<ZZSIZEPRIND>1</ZZSIZEPRIND>
+				<ZZDUTYRATE>0.00</ZZDUTYRATE>
+				<ZZLAENG>0.000</ZZLAENG>
+				<ZZBREIT>0.000</ZZBREIT>
+				<ZZHOEHE>0.000</ZZHOEHE>
+				<ZZVOLUM>0.000</ZZVOLUM>
+				<ZZVOLEH>M3</ZZVOLEH>
+				<ZZLANDCSTHDR>0.00</ZZLANDCSTHDR>
+				<EXTWG>301</EXTWG>
+				<ZZPRIINDX>34</ZZPRIINDX>
+				<ZZNETPRSIZE>15.00</ZZNETPRSIZE>
+				<ZZLANDCSTLINE>0.00</ZZLANDCSTLINE>
+				<ZZEUFABCSTLINE>1.00</ZZEUFABCSTLINE>
+			</row>
+			<row>
+				<ZZWAYREFNO>910002</ZZWAYREFNO>
+				<ZZSTROKE>8039A</ZZSTROKE>
+				<ZZCOLORCDE>V0</ZZCOLORCDE>
+				<ZZBUYRATIO>768</ZZBUYRATIO>
+				<SAISO>SP14</SAISO>
+				<SAISJ>2014</SAISJ>
+				<EKGRP>T25</EKGRP>
+				<LIFNR1>M00037</LIFNR1>
+				<ZZNETPR>15.00</ZZNETPR>
+				<ZZEUFABCST>1.00</ZZEUFABCST>
+				<WAERS>GBP</WAERS>
+				<URZLA>GB</URZLA>
+				<ZZREPROCESS_IND>H</ZZREPROCESS_IND>
+				<ZZDUTYPRE_IND>N</ZZDUTYPRE_IND>
+				<TRAGR>Z001</TRAGR>
+				<ZZSIZEPRIND>1</ZZSIZEPRIND>
+				<ZZDUTYRATE>0.00</ZZDUTYRATE>
+				<ZZLAENG>0.000</ZZLAENG>
+				<ZZBREIT>0.000</ZZBREIT>
+				<ZZHOEHE>0.000</ZZHOEHE>
+				<ZZVOLUM>0.000</ZZVOLUM>
+				<ZZVOLEH>M3</ZZVOLEH>
+				<ZZLANDCSTHDR>0.00</ZZLANDCSTHDR>
+				<EXTWG>301</EXTWG>
+				<ZZPRIINDX>34</ZZPRIINDX>
+				<ZZNETPRSIZE>15.00</ZZNETPRSIZE>
+				<ZZLANDCSTLINE>0.00</ZZLANDCSTLINE>
+				<ZZEUFABCSTLINE>1.00</ZZEUFABCSTLINE>
+			</row>
+		</I_PRICE_DATA>
+	</tables>
+</ZGMM_LANDED_COST_CAL>
+]]></con:request><con:assertion type="Invalid HTTP Status Codes" name="Invalid HTTP Status Codes"><con:configuration><codes>400,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,500,501,502,503,504,505</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains ZGMM_LANDED_COST_CAL"><con:configuration><token>&lt;ZGMM_LANDED_COST_CAL</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains tables"><con:configuration><token>&lt;tables</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains I_PRICE_DATA"><con:configuration><token>&lt;I_PRICE_DATA</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>${#Project#ENDPOINT_USERNAME}</con:username><con:password>${#Project#ENDPOINT_PASSWORD}</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="frontend api" searchProperties="true" id="dff20e0f-5afa-430e-b6c4-2fda4f3698d1"><con:settings/><con:testStep type="restrequest" name="mon http request"><con:settings/><con:config service="frontend api mon" resourcePath="/${#Project#ENDPOINT_APP_ROOT_PATH}/mon/api/frontend/1" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="mon http request" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://${#Project#ENDPOINT_HOSTNAME}:19000</con:endpoint><con:request/><con:assertion type="Invalid HTTP Status Codes" name="Invalid HTTP Status Codes"><con:configuration><codes>400,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,500,501,502,503,504,505</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains success"><con:configuration><token>"success"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="restrequest" name="frontend api https request"><con:settings/><con:config service="frontend api" resourcePath="/${#Project#ENDPOINT_APP_ROOT_PATH}/api/frontend/1/landed-cost-price" methodName="" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="frontend api https request" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://${#Project#ENDPOINT_HOSTNAME}:18000</con:endpoint><con:request/><con:assertion type="Invalid HTTP Status Codes" name="Invalid HTTP Status Codes"><con:configuration><codes>400,402,403,404,405,406,407,408,409,410,411,412,413,414,415,416,417,500,501,502,503,504,505</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains Header"><con:configuration><token>"Header"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains MessageId"><con:configuration><token>"MessageId"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains InterfaceId"><con:configuration><token>"InterfaceId"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains Payload"><con:configuration><token>"Payload"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains WayRefNumber"><con:configuration><token>"WayRefNumber"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" name="Contains variants"><con:configuration><token>"variants"</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:username>${#Project#ENDPOINT_USERNAME}</con:username><con:password>${#Project#ENDPOINT_PASSWORD}</con:password><con:authType>Preemptive</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters>
+  <con:entry key="StrokeNumber" value="8039"/>
+  <con:entry key="SeriesNumber" value="M0135"/>
+  <con:entry key="ProductTypeAttributeCode" value="1401"/>
+  <con:entry key="PlannedFOBCostPrice" value="30.00"/>
+  <con:entry key="SecondarySizeIndex" value="XXL"/>
+  <con:entry key="WayRefNumber" value="181232"/>
+  <con:entry key="DeptNumber" value="T25"/>
+  <con:entry key="DutyRate" value="4.40"/>
+  <con:entry key="BuyingRatioCode" value="760"/>
+  <con:entry key="PrimarySizeIndex" value="M"/>
+  <con:entry key="EUFabricCost" value="7.00"/>
+  <con:entry key="Year" value="2015"/>
+  <con:entry key="DutyPreferenceIndicator" value="Y"/>
+  <con:entry key="ColourCode" value="V0"/>
+  <con:entry key="ReprocessIndicator" value="H"/>
+  <con:entry key="TransitMethod" value="Z001"/>
+  <con:entry key="PriceIndicatorAtSize" value="0"/>
+  <con:entry key="CountryOfOriginNumber" value="GB"/>
+  <con:entry key="Currency" value="GBP"/>
+  <con:entry key="SeasonType" value="SU15"/>
+</con:parameters><con:parameterOrder><con:entry>WayRefNumber</con:entry><con:entry>StrokeNumber</con:entry><con:entry>ColourCode</con:entry><con:entry>BuyingRatioCode</con:entry><con:entry>SeasonType</con:entry><con:entry>Year</con:entry><con:entry>DeptNumber</con:entry><con:entry>SeriesNumber</con:entry><con:entry>PlannedFOBCostPrice</con:entry><con:entry>EUFabricCost</con:entry><con:entry>Currency</con:entry><con:entry>CountryOfOriginNumber</con:entry><con:entry>ReprocessIndicator</con:entry><con:entry>DutyPreferenceIndicator</con:entry><con:entry>TransitMethod</con:entry><con:entry>PriceIndicatorAtSize</con:entry><con:entry>DutyRate</con:entry><con:entry>ProductTypeAttributeCode</con:entry><con:entry>PrimarySizeIndex</con:entry><con:entry>SecondarySizeIndex</con:entry><con:entry>CreatedTimestamp</con:entry></con:parameterOrder></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>ENDPOINT_HOSTNAME</con:name><con:value>10.128.172.96</con:value></con:property><con:property><con:name>ENDPOINT_APP_ROOT_PATH</con:name><con:value>landed-cost-price-service</con:value></con:property><con:property><con:name>ENDPOINT_USERNAME</con:name><con:value>lcps</con:value></con:property><con:property><con:name>ENDPOINT_PASSWORD</con:name><con:value>lcps</con:value></con:property></con:properties><con:wssContainer/><con:sensitiveInformation/></con:soapui-project>

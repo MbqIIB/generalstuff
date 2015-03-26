@@ -8268,6 +8268,8 @@ XI52 A
 
 Internal VIP address : 10.130.148.24
 serial number 6805041
+Internal Subnet address - 10.130.126.10/29 (source Ip for internal)
+
 
 ################################
 
@@ -8281,7 +8283,7 @@ M&S-UK-STP2-XI52-NonProd-A-Ext-B2B-LB-VIP	63.130.82.139	adriatic.b2b.marksandspe
 M&S-UK-STP2-XI52-NonProd-A-Int-B2B-LB-VIP	10.130.148.24	ecomgw1.marksandspencercate.com
 M&S-UK-STP2-XI52-NonProd-B-Ext-B2B-LB-VIP	63.130.82.140	bering.b2b.marksandspencer.com
 M&S-UK-STP2-XI52-NonProd-B-Int-B2B-LB-VIP	10.130.148.25	ecomgw2.marksandspencercate.com
-M&S-UK-STP2-XI52-Prod-Ext-B2B-LB-VIP	63.130.82.141	persian.b2b.marksandspencer.com
+M&S-UK-STP2-XI52-Prod-Ext-B2B-LB-VIP		63.130.82.141	persian.b2b.marksandspencer.com
 M&S-UK-STP2-XI52-Prod-Int-B2B-LB-VIP-Internet	10.130.150.44	ecomgw.marksandspencer.com
 
 
@@ -8729,3 +8731,24 @@ XI52 ####
 63.130.82.139
 63.130.82.140
 
+
+
+
+############Altova XML spy details
+Duvvuri, Pavan Sastry	dv01711
+mnsukdev\P3009770
+mnstcs2015
+
+
+########### toshiba laptop admin rights
+p9116487
+hallebopp100	
+
+
+########## sainsbury repo
+https://github.com/JSainsburyPLC
+https://github.com/JSainsburyPLC
+
+
+################### server information in Ip addressee - specific to M&S
+The addresses 10.129.* on all the unix servers are only backup connection to the servers ,external connectivity to those addresses wont work. The service does not listen on all the adapters
