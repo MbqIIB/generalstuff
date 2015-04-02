@@ -8752,3 +8752,21 @@ https://github.com/JSainsburyPLC
 
 ################### server information in Ip addressee - specific to M&S
 The addresses 10.129.* on all the unix servers are only backup connection to the servers ,external connectivity to those addresses wont work. The service does not listen on all the adapters
+
+
+#####skip tests maven
+-Dmaven.test.skip=true
+<RETURNCODE></RETURNCODE>
+
+
+<set-variable variableName="VarNumber" value="#[(Math.random().intValue())*1000]" doc:name="Variable"/>
+Math.round((Math.random())*100000000)
+
+Math.abs(10.723)
+
+
+
+###### Article API - DEV
+https://hlxd0mw01.unix.marksandspencerdev.com:18000/article-service/api/frontend/1/article/reserve-number?Quantity=10&ClintId=PLM
+https://hlxd0mw01.unix.marksandspencerdev.com:18000/article-service/api/frontend/1/article/reserve-number?Quantity=8&ClientId=TEST
+

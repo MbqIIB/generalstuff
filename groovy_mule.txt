@@ -1,0 +1,52 @@
+For reading flow variables I'm using
+
+message.getInvocationProperty('yourVarsName').toString()
+For reading session variables I'm using
+
+sessionVars['yoursVarsName']
+
+
+message.setInvocationProperty('myFlowVariable', 'value') // sets a flow variable, like <set-variable/>
+message.setOutboundProperty('myProperty', 'value') // sets an outbound message property, like <set-property/>
+message.setProperty('myInboundProperty', 'value', PropertyScope.INBOUND) // sets an inbound property
+
+
+######### logger code
+<logger message="Filtred UUID is:  #[groovy: message.getInvocationProperty('muleUpdateList').find{ if(it.si_dict == payload.smb) return it}.rc_uuid ]" level="INFO" doc:name="MuleDBLog1" />
+
+
+'################
+<message-properties-transformer doc:name="Triger Table to variables">
+   <add-message-property key="tt_bms" value="#[groovy:payload.bms]"/>
+</message-properties-transformer>
+
+<logger message="bms #[groovy: message.getProperty('tt_bms')]" level="INFO" doc:name="Logger"/>
+
+
+####groovy file
+def clientmap = new File("src/main/resources/HashMap-Range.groovy").getText()
+
+
+
+########################### using hashmap to identify key value pair - also the commented part will use a hashmap file
+import org.mule.api.transport.*
+
+
+//def datafromFile = new File("src/main/resources/HashMap-Range.groovy").getText()
+//def clientmap = Eval.me(datafromFile)
+def clientmap = [ PLM:"02", TEST:"01"]
+def key = payload.ClientId
+println "client id passed are " + key
+def rangevalue = clientmap[key]
+
+if(clientmap.containsKey(key)){
+println "entered into if"
+message.setProperty("rangeNumber", rangevalue, PropertyScope.SESSION)
+return payload
+}
+else{
+throw new org.mule.module.apikit.exception.BadRequestException("clientID : " + key + ", is invalid or not Configured")//
+}
+
+
+###########################
