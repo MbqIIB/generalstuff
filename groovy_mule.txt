@@ -49,4 +49,54 @@ throw new org.mule.module.apikit.exception.BadRequestException("clientID : " + k
 }
 
 
-###########################
+########################### access files on src/main/resources
+
+I have a Mule CE application that is using a Java component to transform a CSV file to XML. My Java class needs to access a flatpack XML file called map.xml - I have placed this in src/main/resources. My Java class is in src/main/java. I'm currently accessing the map.xml file in my Java class as follows:
+
+fr = new FileReader("src/main/resources/map.xml");
+
+This works fine in Mule Studio, but when I try and run this application in Mule Standalone, I get the following error:
+
+java.io.FileNotFoundException: src/main/resources/map.xml (No such file or directory)
+
+Is there a way I can make this file path mutual so that it will work in both Studio and Standalone? I have also tried simply fr = new FileReader("map.xml"); and this fails in Studio.
+
+UPDATE
+
+Through a combination of the answer from @Learner, and some info in this post, I've managed to find a solution to this problem. I've updated my Java class to the following and this has worked in both Studio and Standalone:
+
+fr = new FileReader(this.class.getResource("/map.xml").getPath());
+
+
+######################### Working  - code for reading from an external hashmap - the map file was placed under a folder called scripts under /src/main/resources . The script file is also in the same folder and below is the scripotit is referred as
+
+#####################################################
+import org.mule.api.transport.*
+
+
+fr = new FileReader(this.class.getResource("/scripts/Map-ClientId-RangeNumber.groovy").getPath())
+def datafromFile = fr.getText()
+
+// The below line is commented - this only works in studio , in standalone src/main/resources is irrelevant
+//def datafromFile = new File("src/main/resources/Map-ClientId-RangeNumber.groovy").getText()
+
+def clientmap = Eval.me(datafromFile)
+
+// To test , you can define the clientmap directly here
+//def clientmap = [ PLM:"02", TEST:"01"]
+
+def key = payload.ClientId
+println "client id passed are " + key
+def rangevalue = clientmap[key]
+
+if(clientmap.containsKey(key)){
+println "entered into if"
+message.setProperty("rangeNumber", rangevalue, PropertyScope.SESSION)
+return payload
+}
+else{
+throw new org.mule.module.apikit.exception.BadRequestException("clientID : " + key + ", is invalid or not Configured")//
+}
+
+####################################################################################
+

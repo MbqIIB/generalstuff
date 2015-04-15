@@ -167,3 +167,6 @@ yum install gcc-c++ make
  curl -u admin:password -XGET 'http://192.168.56.40:9200/_cat/indices?v'
 
 
+
+ ############ install plugin offline
+ bin/plugin --install HQ --url file:///Full/Path/To/royrusso-elasticsearch-HQ-603ae9e.zip

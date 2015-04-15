@@ -1,0 +1,7 @@
+###steps for automatic ssh from machine A - user A to machine B user B
+#### on Machine A user A home folder
+ssh-keygen -t rsa  (dont enter any passphrase)
+ssh-copy-id  userB@hmachineB.com   
+ssh userB@machineB.com "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
+
+ssh userB@machineB.com

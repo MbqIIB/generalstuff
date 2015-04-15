@@ -8770,3 +8770,23 @@ Math.abs(10.723)
 https://hlxd0mw01.unix.marksandspencerdev.com:18000/article-service/api/frontend/1/article/reserve-number?Quantity=10&ClintId=PLM
 https://hlxd0mw01.unix.marksandspencerdev.com:18000/article-service/api/frontend/1/article/reserve-number?Quantity=8&ClientId=TEST
 
+
+#### apigee test
+https://api-test.marksandspencer.com/article/reserve-number?Quantity=64&ClientId=TEST
+
+####iptables block port
+iptables -A INPUT -p tcp --destination-port {PORT-NUMBER-HERE} -j DROP
+
+iptables -A INPUT -p tcp --destination-port 29000 -j DROP
+
+
+#### Delete Iptables by line numbers
+##list line numbers first
+iptables -vnL --line-numbers
+####Then delete the line you want:
+
+iptables -D INPUT 22
+
+
+################deleting large number of files in a folder
+for f in *.pdf; do rm "$f"; done

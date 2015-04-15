@@ -16,3 +16,8 @@ https://www.npmjs.com/package/offline-npm#readme
 
 
 ###checkout supervisor to restart process
+
+
+
+##### if using eclipse - install http://www.nodeclipse.org/
+update site -	http://www.nodeclipse.org/updates/anide/
