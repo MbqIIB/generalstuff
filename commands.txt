@@ -8315,7 +8315,9 @@ use the LDAP credentials.
  Enterprise Repository Managers - Nexus
  
  
- jdbc:db2://10.144.35.22:50000/T2MSDB01:user=tmsinst1;password=7RhIt9pz
+ ######### db2 url connection
+ 
+jdbc:db2://10.144.35.22:50000/T2MSDB01:user=tmsinst1;password=7RhIt9pz;
  
  
  ST
