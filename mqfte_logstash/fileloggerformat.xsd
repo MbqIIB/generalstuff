@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+@start_non_restricted_prolog@
+Version: %Z% %I% %W% %E% %U% [%H% %T%]
+
+Licensed Materials - Property of IBM
+
+5724-H72
+
+Copyright IBM Corp. 2011 All Rights Reserved.
+
+US Government Users Restricted Rights - Use, duplication or
+disclosure restricted by GSA ADP Schedule Contract with
+IBM Corp.
+@end_non_restricted_prolog@
+ -->
+
+<!-- 
+     This schema defines the format of the FileLoggerFormat XML file that contains the definition 
+     of the format to use when logging FTE log messages to a file. When an XML file that conforms 
+     to this schema is processed by a file logger it can contain definitions for one or more 
+     message type(s) that define how log messages of those types are output to the file log.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+<xsd:include schemaLocation="fteutils.xsd"/>
+
+    <!--
+        Defines the logFileDefinition and version number
+        <logFileDefinition version="1.00" ...
+            <messageTypes>
+                ...
+            </messageTypes>
+        </logFileDefinition>        
+     -->
+    <xsd:element name="logFileDefinition">
+        <xsd:complexType>
+            <xsd:sequence>
+	            <xsd:element   name="messageTypes" type="messageTypesType" maxOccurs="1" minOccurs="1"/>
+	        </xsd:sequence>
+            <xsd:attribute name="version"      type="versionType"      use="required"/>
+        </xsd:complexType>
+    </xsd:element>
+    
+    <!--
+        Defines the set of accepted message types. The definition of individual message types 
+        is optional. If a particular types element is present but empty then no line will be 
+        output for messages of that type. If a particular types element is not present then 
+        the default format will be used to format messages of that type.
+     -->
+    <xsd:complexType name="messageTypesType">
+         <xsd:sequence>
+            <xsd:element name="callCompleted"             type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="callStarted"               type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="monitorAction"             type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="monitorCreate"             type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="monitorFired"              type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="notAuthorized"             type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="scheduleDelete"            type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="scheduleExpire"            type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="scheduleSkipped"           type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="scheduleSubmitInfo"        type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="scheduleSubmitTransfer"    type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="scheduleSubmitTransferSet" type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="transferStarted"           type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="transferCancelled"         type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="transferComplete"          type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="transferDelete"            type="messageType"  maxOccurs="1" minOccurs="0"/>
+            <xsd:element name="transferProgress"          type="messageType"  maxOccurs="1" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <!--
+        Defines the content of a message type definition e.g.
+        
+        <callStarted>
+         <format>
+          ...
+         </format>
+        <callStarted>
+     -->
+    <xsd:complexType name="messageType">
+        <xsd:sequence>
+            <xsd:element name="format"   type="messageFormatType"  maxOccurs="1" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--
+        Defines the content of a message format definition e.g.
+        
+         <format>
+          <inserts>
+           ...
+          </inserts
+          <separator>;</separator>
+         </format>
+     -->
+    <xsd:complexType name="messageFormatType">
+        <xsd:sequence>
+            <xsd:element name="inserts"   type="insertsType"  maxOccurs="1" minOccurs="1"/>
+            <xsd:element name="separator" type="scheduleType" maxOccurs="1" minOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--
+        Defines the content of the inserts element e.g.
+        
+        <inserts>
+         <insert ...>
+         <insert ...>
+         ...
+        </inserts>         
+     -->
+    <xsd:complexType name="insertsType">
+        <xsd:sequence>
+         	<xsd:element name="insert" type="insertType" maxOccurs="unbounded" minOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <!--
+        Defines the content of an insert definition e.g.
+        
+        <insert type="user" width="0" ignoreNull="true">/transaction/@ID</insert>
+     -->
+    <xsd:complexType name="insertType">
+        <xsd:attribute name="type"       type="insertTypeType"         use="required"/>
+        <xsd:attribute name="width"      type="xsd:nonNegativeInteger" use="required"/>
+        <xsd:attribute name="ignoreNull" type="xsd:boolean"            use="required"/>    
+    </xsd:complexType>
+
+    <!--
+        Defines the accepted choices for the insert type attribute.
+     -->
+    <xsd:simpleType name="insertTypeType">
+        <xsd:restriction base="xsd:token">
+            <xsd:enumeration value="user"/>
+            <xsd:enumeration value="system"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+</xsd:schema> 

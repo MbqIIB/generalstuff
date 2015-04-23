@@ -1,0 +1,16 @@
+
+###### replace the pipe by space and then just use word (space is automatic delimiter)
+
+filter {
+    mutate {
+            gsub => ["message","\|"," "]
+    }
+
+    grok {
+            match => ["message","%{DATESTAMP:time} %{WORD:LOGLEVEL} %{WORD:LOGSOURCE} %{WORD:LOGMESSAGE}"]
+    }
+}
+
+
+################## MQFTE pattern
+%{TIMESTAMP_ISO8601:time}\;%{WORD:id}\;\[%{WORD:dummy}\]\;\s*\;%{WORD:sourceagent}

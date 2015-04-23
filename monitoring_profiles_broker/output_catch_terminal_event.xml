@@ -1,0 +1,150 @@
+<wmb:event xmlns:wmb="http://www.ibm.com/xmlns/prod/websphere/messagebroker/6.1.0/monitoring/event">
+ <wmb:eventPointData>
+  <wmb:eventData wmb:productVersion="8001" wmb:eventSchemaVersion="6.1.0.3" wmb:eventSourceAddress="JMS Input.terminal.catch">
+   <wmb:eventIdentity wmb:eventName="JMS Input.CatchTerminal"/>
+   <wmb:eventSequence wmb:creationTime="2015-04-23T19:50:30.059999Z" wmb:counter="2"/>
+   <wmb:eventCorrelation wmb:localTransactionId="36275ace-2cba-431f-b66d-1c0ccfd5b00d-1" wmb:parentTransactionId="" wmb:globalTransactionId=""/>
+  </wmb:eventData>
+  <wmb:messageFlowData>
+   <wmb:broker wmb:name="MB8BROKER" wmb:UUID="2b5d7718-e813-4ff3-ba7b-2d7adafc03ed"/>
+   <wmb:executionGroup wmb:name="TEST01" wmb:UUID="ba81e645-4501-0000-0080-b80ebcd11a94"/>
+   <wmb:messageFlow wmb:uniqueFlowName="MB8BROKER.TEST01.event_test" wmb:name="event_test" wmb:UUID="4be8a3e7-4c01-0000-0080-b5b76931b1f0" wmb:threadId="12176"/>
+   <wmb:node wmb:nodeLabel="JMS Input" wmb:nodeType="ComIbmJMSClientInputNode" wmb:terminal="catch"/>
+  </wmb:messageFlowData>
+ </wmb:eventPointData>
+ <wmb:applicationData xmlns="">
+  <wmb:complexContent wmb:elementName="ExceptionList">
+   <ExceptionList>
+    <RecoverableException>
+     <File>F:\build\slot1\S800_P\src\DataFlowEngine\ImbDataFlowNode.cpp</File>
+     <Line>1154</Line>
+     <Function>ImbDataFlowNode::createExceptionList</Function>
+     <Type>ComIbmJMSClientInputNode</Type>
+     <Name>event_test#FCMComposite_1_1</Name>
+     <Label>event_test.JMS Input</Label>
+     <Catalog>BIPmsgs</Catalog>
+     <Severity>3</Severity>
+     <Number>2230</Number>
+     <Text>Node throwing exception</Text>
+     <RecoverableException>
+      <File>F:\build\slot1\S800_P\src\DataFlowEngine\ImbMqOutputNode.cpp</File>
+      <Line>876</Line>
+      <Function>ImbMqOutputNode::evaluate</Function>
+      <Type>ComIbmMQOutputNode</Type>
+      <Name>event_test#FCMComposite_1_3</Name>
+      <Label>event_test.MQ Output</Label>
+      <Catalog>BIPmsgs</Catalog>
+      <Severity>3</Severity>
+      <Number>2230</Number>
+      <Text>Caught exception and rethrowing</Text>
+      <MessageException>
+       <File>F:\build\slot1\S800_P\src\DataFlowEngine\ImbMqOutputNode.cpp</File>
+       <Line>2161</Line>
+       <Function>ImbMqOutputNode::putMessage</Function>
+       <Type>ComIbmMQOutputNode</Type>
+       <Name>event_test#FCMComposite_1_3</Name>
+       <Label>event_test.MQ Output</Label>
+       <Catalog>BIPmsgs</Catalog>
+       <Severity>3</Severity>
+       <Number>2667</Number>
+       <Text>Failed to put message</Text>
+       <Insert>
+        <Type>2</Type>
+        <Text>-1</Text>
+       </Insert>
+       <Insert>
+        <Type>5</Type>
+        <Text>MQW102</Text>
+       </Insert>
+       <Insert>
+        <Type>2</Type>
+        <Text>2051</Text>
+       </Insert>
+       <Insert>
+        <Type>5</Type>
+        <Text></Text>
+       </Insert>
+       <Insert>
+        <Type>5</Type>
+        <Text></Text>
+       </Insert>
+       <Insert>
+        <Type>5</Type>
+        <Text>OUT.SUBSCRIBE</Text>
+       </Insert>
+      </MessageException>
+     </RecoverableException>
+    </RecoverableException>
+   </ExceptionList>
+  </wmb:complexContent>
+  <wmb:complexContent wmb:elementName="Root">
+   <Root>
+    <Properties>
+     <MessageSet></MessageSet>
+     <MessageType></MessageType>
+     <MessageFormat></MessageFormat>
+     <Encoding>0</Encoding>
+     <CodedCharSetId>1208</CodedCharSetId>
+     <Transactional>true</Transactional>
+     <Persistence>false</Persistence>
+     <CreationTime></CreationTime>
+     <ExpirationTime></ExpirationTime>
+     <Priority>0</Priority>
+     <ReplyIdentifier>000000000000000000000000000000000000000000000000</ReplyIdentifier>
+     <ReplyProtocol>JMS</ReplyProtocol>
+     <Topic></Topic>
+     <ContentType></ContentType>
+     <IdentitySourceType></IdentitySourceType>
+     <IdentitySourceToken></IdentitySourceToken>
+     <IdentitySourcePassword></IdentitySourcePassword>
+     <IdentitySourceIssuedBy></IdentitySourceIssuedBy>
+     <IdentityMappedType></IdentityMappedType>
+     <IdentityMappedToken></IdentityMappedToken>
+     <IdentityMappedPassword></IdentityMappedPassword>
+     <IdentityMappedIssuedBy></IdentityMappedIssuedBy>
+    </Properties>
+    <JMSTransport>
+     <Transport_Folders>
+      <Message_MetaData>
+       <PayloadType>jms_text</PayloadType>
+       <MessagePersistence>Non_Persistent</MessagePersistence>
+      </Message_MetaData>
+      <Header_Values>
+       <JMSDestination> </JMSDestination>
+       <JMSDeliveryMode>1</JMSDeliveryMode>
+       <JMSExpiration>0</JMSExpiration>
+       <JMSPriority>0</JMSPriority>
+       <JMSTimestamp>1429818624120</JMSTimestamp>
+       <JMSMessageID>ID:414d51204757514d3031202020202020571a325520032d1d</JMSMessageID>
+       <JMSCorrelationID> </JMSCorrelationID>
+       <JMSReplyTo> </JMSReplyTo>
+       <JMSType> </JMSType>
+       <JMSRedelivered>0</JMSRedelivered>
+      </Header_Values>
+      <Application_Properties></Application_Properties>
+      <JMS_Provider_Properties>
+       <JMS_IBM_Format>MQSTR   </JMS_IBM_Format>
+       <JMS_IBM_MsgType>8</JMS_IBM_MsgType>
+       <JMS_IBM_Character_Set>UTF-8</JMS_IBM_Character_Set>
+       <JMS_IBM_PutTime>19502412</JMS_IBM_PutTime>
+       <JMS_IBM_PutDate>20150423</JMS_IBM_PutDate>
+       <JMS_IBM_PutApplType>11</JMS_IBM_PutApplType>
+       <JMS_IBM_Encoding>546</JMS_IBM_Encoding>
+      </JMS_Provider_Properties>
+      <Standard_Properties>
+       <JMSXDeliveryCount>1</JMSXDeliveryCount>
+       <JMSXAppID>s\RFHUTIL - ih03\rfhutil.exe</JMSXAppID>
+       <JMSXUserID>B8886963    </JMSXUserID>
+      </Standard_Properties>
+     </Transport_Folders>
+    </JMSTransport>
+    <XMLNSC>
+     <a>123</a>
+    </XMLNSC>
+   </Root>
+  </wmb:complexContent>
+ </wmb:applicationData>
+ <wmb:bitstreamData>
+  <wmb:bitstream wmb:encoding="CDATA"><![CDATA[<Transport_Folders><Message_MetaData><PayloadType>jms_text</PayloadType><MessagePersistence>Non_Persistent</MessagePersistence></Message_MetaData><Header_Values><JMSDestination> </JMSDestination><JMSDeliveryMode dt="i4">1</JMSDeliveryMode><JMSExpiration dt="i8">0</JMSExpiration><JMSPriority dt="i4">0</JMSPriority><JMSTimestamp dt="i8">1429818624120</JMSTimestamp><JMSMessageID>ID:414d51204757514d3031202020202020571a325520032d1d</JMSMessageID><JMSCorrelationID> </JMSCorrelationID><JMSReplyTo> </JMSReplyTo><JMSType> </JMSType><JMSRedelivered dt="boolean">0</JMSRedelivered></Header_Values><Application_Properties/><JMS_Provider_Properties><JMS_IBM_Format>MQSTR   </JMS_IBM_Format><JMS_IBM_MsgType dt="i4">8</JMS_IBM_MsgType><JMS_IBM_Character_Set>UTF-8</JMS_IBM_Character_Set><JMS_IBM_PutTime>19502412</JMS_IBM_PutTime><JMS_IBM_PutDate>20150423</JMS_IBM_PutDate><JMS_IBM_PutApplType dt="i4">11</JMS_IBM_PutApplType><JMS_IBM_Encoding dt="i4">546</JMS_IBM_Encoding></JMS_Provider_Properties><Standard_Properties><JMSXDeliveryCount dt="i4">1</JMSXDeliveryCount><JMSXAppID>s\RFHUTIL - ih03\rfhutil.exe</JMSXAppID><JMSXUserID>B8886963    </JMSXUserID></Standard_Properties></Transport_Folders><a>123</a>]]></wmb:bitstream>
+ </wmb:bitstreamData>
+</wmb:event>

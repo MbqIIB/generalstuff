@@ -1,0 +1,12 @@
+mqsichangeflowmonitoring MB8BROKER -e TEST01 -k large_file_processing -f db_insert -s "QIN.terminal.out" -i enable
+
+mqsichangeflowmonitoring MB8BROKER -e TEST01 -k large_file_processing -f db_insert -s "QIN.terminal.catch,QIN.terminal.out" -i enable
+mqsichangeflowmonitoring  MB8BROKER -e TEST01 -k test_application -f event_test  -c active
+
+
+
+
+mqsireportflowmonitoring MB8BROKER -e TEST01 -k test_application -f event_test -x -p event_test.xml
+
+subscription
+$SYS/Broker/MB8BROKER/Monitoring/TEST01/#

@@ -100,3 +100,13 @@ throw new org.mule.module.apikit.exception.BadRequestException("clientID : " + k
 
 ####################################################################################
 
+############# reading data from property file
+def consumerID = message.getInboundProperty('keyId')
+Properties props = new Properties()
+File propFile = new File('all.properties')
+props.load(propFile.newDataInputStream())
+message.setInvocationProperty('principal', props.getProperty(consumerID + '.pgp.principal'))
+org.springframework.util.Assert.notNull(message.getInvocationProperty('principal'), 'Property for KeyId not found')
+return payload
+
+#############################
