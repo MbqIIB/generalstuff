@@ -177,3 +177,23 @@ $ git push origin dev
 $ git push origin myFeature
 And you'll see it how you want it.
 
+
+
+
+###################### revert a git push --force and undelete stuff
+
+How to undo a git push --force and undelete things
+By borfast October 19, 2014
+Today someone asked for my help to undo a git push --force that messed up his production server by overwriting the master branch with something that wasn't meant to be there.
+
+My first advice would be to not deploy to production servers by manually running git pull or git push, but that's another story. ;)
+
+So how would you solve the situation? It's actually quite simple but if you don't know some details about how git works, it can seem a bit daunting.
+
+If you're in a hurry and know what you're doing:
+
+Look at the reflog from either your local (git reflog) or remote repository (git reflog show remotes/origin/master) and find the commit that you want to revert to;
+Checkout the commit you want to return your repository to by checking out its hash;
+Create a temporary branch off from the commit;
+Push it back to the remote repository.
+Done.
