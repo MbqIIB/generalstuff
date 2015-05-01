@@ -109,4 +109,6 @@ message.setInvocationProperty('principal', props.getProperty(consumerID + '.pgp.
 org.springframework.util.Assert.notNull(message.getInvocationProperty('principal'), 'Property for KeyId not found')
 return payload
 
-#############################
+############################# groovy watermark
+
+#[groovy: new Date(System.currentTimeMillis() - 10000).format("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", TimeZone.getTimeZone('UTC'))]

@@ -1,0 +1,38 @@
+1) Copy the ROOT.tar into the webapps folder of tomcat and untar
+2) edit the conf/web.xml and in the line for listings to be true (look below)
+
+ <servlet>
+        <servlet-name>default</servlet-name>
+        <servlet-class>org.apache.catalina.servlets.DefaultServlet</servlet-class>
+        <init-param>
+            <param-name>debug</param-name>
+            <param-value>0</param-value>
+        </init-param>
+        <init-param>
+            <param-name>listings</param-name>
+            <param-value>true</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+
+3) create a symlink for the folder as a name and specify that as HREF in the ROOT/list.html
+
+4) Create a META-INF folder under webapps/ROOT (if not present and create a context.xml with the below contents)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/ROOT" allowLinking="true">
+</Context>
+
+5) Need to add the following to ROOT/web.xml
+<servlet-mapping>
+   <servlet-name>default</servlet-name>
+   <url-pattern>/</url-pattern>
+</servlet-mapping>
+
+5) Read this page -http://stackoverflow.com/questions/7068046/how-can-i-list-all-the-files-in-folder-on-tomcat
+
+
+
+
+http://wso2.com/node/1096/print

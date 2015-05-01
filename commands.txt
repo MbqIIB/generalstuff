@@ -8341,6 +8341,9 @@ password: KernelPanic
 Nexus: http://10.128.138.93:8081/nexus
 Jenkins: http://10.128.138.138/
 
+jenkins stockley - http://10.128.138.77:8081/
+
+
 
 \\10.128.11.10\mcfp_share\SCOM
 
@@ -8792,3 +8795,8 @@ iptables -D INPUT 22
 
 ################deleting large number of files in a folder
 for f in *.pdf; do rm "$f"; done
+
+
+
+############ running the maven command in jenkins
+mvn -Dsoapui.endpoint.hostname=10.128.172.94  -Dmmc.password=admindev -Dmmc.deploy.domain=dev -Dmmc.clusterName=dev -Dmaven.test.skip=true -Dskip.soapui.test=false clean deploy
