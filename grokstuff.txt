@@ -14,3 +14,20 @@ filter {
 
 ################## MQFTE pattern
 %{TIMESTAMP_ISO8601:time}\;%{WORD:id}\;\[%{WORD:dummy}\]\;\s*\;%{WORD:sourceagent}
+
+
+
+piped data - replace pipe with space and then do stuff
+You can use gsub API to change the pipe "|" to space and the use GROK to extract it.
+
+For example:
+
+filter {
+    mutate {
+            gsub => ["message","\|"," "]
+    }
+
+    grok {
+            match => ["message","%{DATESTAMP:time} %{WORD:LOGLEVEL} %{WORD:LOGSOURCE} %{WORD:LOGMESSAGE}"]
+    }
+}

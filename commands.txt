@@ -8800,3 +8800,28 @@ for f in *.pdf; do rm "$f"; done
 
 ############ running the maven command in jenkins
 mvn -Dsoapui.endpoint.hostname=10.128.172.94  -Dmmc.password=admindev -Dmmc.deploy.domain=dev -Dmmc.clusterName=dev -Dmaven.test.skip=true -Dskip.soapui.test=false clean deploy
+
+
+
+
+########### apigee URL for dev article
+https://api-test.marksandspencer.com/int-api/article-service/api/frontend/1/article/reserve-number?Quantity=10&ClientId=PLM
+
+############# apigee URL for dev landed cost price
+
+https://api-test.marksandspencer.com/int-api/landed-cost-price-service/api/frontend/1/landed-cost-price?WayRefNumber=181232&StrokeNumber=8039&ColourCode=V0&BuyingRatioCode=760&SeasonType=SU15&Year=2015&DeptNumber=T25&SeriesNumber=M0135&PlannedFOBCostPrice=30.00&EUFabricCost=7.00&Currency=GBP&CountryOfOriginNumber=GB&ReprocessIndicator=H&DutyPreferenceIndicator=Y&TransitMethod=Z001&PriceIndicatorAtSize=0&DutyRate=4.40&ProductTypeAttributeCode=1401
+
+
+###### command in jenkins
+-Dsoapui.endpoint.hostname=10.128.172.94  -Dmmc.password=admindev -Dmmc.deploy.domain=dev -Dmmc.clusterName=dev -Dmaven.test.skip=true -Dskip.soapui.test=false clean deploy
+
+############ apigee URL for common component call from external
+https://api-test.marksandspencer.com/int-api/common/api/audit/1/entries?MessageId=777888
+
+######### curl command for audit api externally
+
+curl -XPOST -H "Content-Type:text/plain" https://common:common@api-test.marksandspencer.com/int-api/common/api/audit/1/entries?MessageId=777888
+
+
+https://username:password@hlxd0mw01.unix.marksandspencerdev.com:18000/common/api/audit/1/entries?InterfaceId=123&InterfaceName=Test&MessageId=444
+
