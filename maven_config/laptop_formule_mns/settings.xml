@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	<servers>
+		<!--<server><id>mns.corp.nexus.release</id><username>adavis</username><password>hahosparas</password></server><server><id>mns.corp.nexus.snapshot</id><username>adavis</username><password>hahosparas</password></server>--><server>
+			<id>mns.corp.nexus.release</id>
+			<username>sgonsalvez</username>
+			<password>KernelPanic</password>
+		</server>
+		<server>
+			<id>mns.corp.nexus.snapshot</id>
+			<username>sgonsalvez</username>
+			<password>KernelPanic</password>
+		</server>
+	</servers>
+	<mirrors>
+		<!-- This is the nexus proxy which is created for maven central repository and the soap UI maven plugin-->
+		<mirror>
+			<id>Central.mirror.corp.nexus</id>
+			<mirrorOf>Central,central</mirrorOf>
+			<url>http://10.128.138.93:8081/nexus/content/repositories/central/</url>
+		</mirror>
+		<mirror>
+			<id>public.mirror.corp.nexus</id>
+			<mirrorOf>smartbear-sweden-plugin-repository,mulesoft-dependencies</mirrorOf>
+			<url>http://10.128.138.93:8081/nexus/content/repositories/public/</url>
+		</mirror>
+		<mirror>
+			<id>xqj.mirror.corp.nexus</id>
+			<mirrorOf>xqj</mirrorOf>
+			<url>http://10.128.138.93:8081/nexus/content/repositories/xqj-releases/</url>
+		</mirror>
+		<!--	The following repos are cached in http://10.128.138.93:8081/nexus/content/repositories/mulesoft-releases		https://repository.mulesoft.org/nexus/content/repositories/releases-ee/com/mulesoft/muleesb/	https://repository.mulesoft.org/nexus/content/groups/mule-ee-dependencies/	https://repository.mulesoft.org/nexus/content/repositories/releases-ee/	https://repository.mulesoft.org/nexus/content/repositories/releases/	https://repository.mulesoft.org/nexus/content/repositories/public/	http://repository.mulesoft.org/snapshots/		Note: this is not correct and should be reationalised to a one-to-one when possible. 		-->
+		<mirror>
+			<id>mulesoft.releases.mirror.corp.nexus</id>
+			<mirrorOf>mulesoft-releases,mule-releases,mule-ee-releases,mule</mirrorOf>
+			<url>http://10.128.138.93:8081/nexus/content/repositories/mulesoft-releases/</url>
+		</mirror>
+		<!--	The following repos are cached in http://10.128.138.93:8081/nexus/content/repositories/mulesoft-snapshots/	https://repository.mulesoft.org/nexus/content/repositories/snapshots/	http://repository.mulesoft.org/snapshots/		Note: this is not correct and should be reationalised to a one-to-one when possible. 	-->
+		<mirror>
+			<id>mulesoft.snapshots.mirror.corp.nexus</id>
+			<mirrorOf>mulesoft-snapshots,mule-snapshots</mirrorOf>
+			<url>http://10.128.138.93:8081/nexus/content/repositories/mulesoft-snapshots/</url>
+		</mirror>
+	</mirrors>
+	<profiles>
+		<!-- profile for each of the network created, the properties here are required to be overwritten from in the POM, but not needed for the local system build -->
+		<profile>
+			<id>salina</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<maven.test.skip>true</maven.test.skip>
+				<!-- C.I. properties  -->
+				<!--<ciserver.http.host>192.168.56.20</ciserver.http.host><mmc.url>http://192.168.56.30:8585/mmc/api</mmc.url>--><ciserver.http.host>hlxd0mw01.unix.marksandspencerdev.com</ciserver.http.host>
+				<mmc.url>http://hlxd0mw02.unix.marksandspencerdev.com:8585/mmc/api</mmc.url>
+				<!--<mmc.serverGroup>ci</mmc.serverGroup>--><mmc.clusterName>dev</mmc.clusterName>
+				<mmc.username>admin</mmc.username>
+				<mmc.password>admindev</mmc.password>
+				<mmc.deploy.domain>dev</mmc.deploy.domain>
+				<!-- needed for the local laptop as the deploy will not happen to any server , and the SOAP UI test is not executed-->
+				<!-- needed to ovewrite soap UI hostname<soapui.endpoint.hostname>10.128.172.94</soapui.endpoint.hostname>--><skip.deploy.ciserver>false</skip.deploy.ciserver>
+				<skip.soapui.test>true</skip.soapui.test>
+			</properties>
+			<repositories>
+				<repository>
+					<id>mns.corp.nexus.release</id>
+					<name>Marks and Spencer Corporate Release Repository</name>
+					<url>http://10.128.138.93:8081/nexus/content/repositories/mule-releases/</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</repository>
+				<repository>
+					<id>mns.corp.nexus.snapshot</id>
+					<name>Marks and Spencer Corporate Snapshot Repository</name>
+					<url>http://10.128.138.93:8081/nexus/content/repositories/mule-snapshots/</url>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</repository>
+			</repositories>
+			<pluginRepositories>
+				<pluginRepository>
+					<id>mns.corp.nexus.release</id>
+					<name>Marks and Spencer Corporate Release Repository</name>
+					<url>http://10.128.138.93:8081/nexus/content/repositories/mule-releases/</url>
+					<snapshots>
+						<enabled>false</enabled>
+					</snapshots>
+				</pluginRepository>
+				<pluginRepository>
+					<id>mns.corp.nexus.snapshot</id>
+					<name>Marks and Spencer Corporate Snapshot Repository</name>
+					<url>http://10.128.138.93:8081/nexus/content/repositories/mule-snapshots/</url>
+					<snapshots>
+						<enabled>true</enabled>
+					</snapshots>
+				</pluginRepository>
+			</pluginRepositories>
+		</profile>
+	</profiles>
+</settings>
