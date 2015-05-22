@@ -1,0 +1,32 @@
+          <insert type="system" width="6"  ignoreNull="false">type</insert>
+          <insert type="user"   width="19" ignoreNull="false">/transaction/action/@time</insert>
+          <insert type="user"   width="48" ignoreNull="false">/transaction/@ID</insert>
+         <insert type="user"   width="0"  ignoreNull="false">/transaction/sourceAgent/@agent | /transaction/sourceWebUser/@webGatewayAgentName | /transaction/sourceWebGateway/@webGatewayAgentName</insert>
+          <insert type="user"   width="0"  ignoreNull="true">/transaction/sourceAgent/@QMgr | /transaction/sourceWebUser/@webGatewayAgentQMgr | /transaction/sourceWebGateway/@webGatewayAgentQMgr</insert>
+          <insert type="user"   width="0"  ignoreNull="true">/transaction/sourceAgent/@agentType | /transaction/sourceWebUser/@webGatewayAgentType | /transaction/sourceWebGateway/@webGatewayAgentType</insert>
+          <insert type="user"   width="0"  ignoreNull="false">/transaction/destinationAgent/@agent | /transaction/destinationWebUser/@webGatewayAgentName | /transaction/destinationWebGateway/@webGatewayAgentName</insert>
+          <insert type="user"   width="0"  ignoreNull="true">/transaction/destinationAgent/@QMgr | /transaction/destinationWebUser/@webGatewayAgentQMgr | /transaction/destinationWebGateway/@webGatewayAgentQMgr</insert>
+          <insert type="user"   width="0"  ignoreNull="true">/transaction/destinationAgent/@agentType | /transaction/destinationWebUser/@webGatewayAgentType | /transaction/destinationWebGateway/@webGatewayAgentType</insert>
+          <insert type="user"   width="0"  ignoreNull="true">/transaction/job/name</insert>
+          <insert type="user"   width="3"  ignoreNull="true">status/@resultCode</insert>
+          <insert type="user"   width="0"  ignoreNull="true">status/supplement</insert>
+          <insert type="user"   width="0"  ignoreNull="true">/transaction/originator/userID</insert>
+          <insert type="system" width="0"  ignoreNull="true">transferMetaData</insert>
+          <insert type="user"   width="0"  ignoreNull="false">source/file | source/queue</insert>
+          <insert type="user"   width="0"  ignoreNull="false">source/file/@size | source/queue/@size</insert>
+          <insert type="user"   width="0"  ignoreNull="true">source/@type</insert>
+          <insert type="user"   width="6"  ignoreNull="true">source/@disposition</insert>
+          <insert type="user"   width="0"  ignoreNull="true">source/file/@alias | source/queue/@alias</insert>
+          <insert type="user"   width="0"  ignoreNull="true">source/file/@filespace | source/queue/@filespace</insert>
+          <insert type="user"   width="0"  ignoreNull="true">source/@correlationBoolean1</insert>
+          <insert type="user"   width="0"  ignoreNull="true">source/@correlationNum1</insert>
+          <insert type="user"   width="0"  ignoreNull="true">source/@correlationString1</insert>
+          <insert type="user"   width="0"  ignoreNull="false">destination/file | destination/queue</insert>
+          <insert type="user"   width="0"  ignoreNull="false">destination/file/@size | destination/queue/@size</insert>
+          <insert type="user"   width="0"  ignoreNull="true">destination/@type</insert>
+          <insert type="user"   width="9"  ignoreNull="true">destination/@exist</insert>
+          <insert type="user"   width="0"  ignoreNull="true">destination/file/@alias | destination/queue/@alias</insert>
+          <insert type="user"   width="0"  ignoreNull="true">destination/file/@filespace | destination/queue/@filespace</insert>
+          <insert type="user"   width="0"  ignoreNull="true">destination/@correlationBoolean1</insert>
+          <insert type="user"   width="0"  ignoreNull="true">destination/@correlationNum1</insert>
+          <insert type="user"   width="0"  ignoreNull="true">destination/@correlationString1</insert>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+    <servers><server>
+      <id>mule-ee-releases</id>
+      <username>marks.spencer.nexus</username>
+      <password>f0rJ4d0Rd3C4mP30n35</password>
+    </server></servers>
+
+<!--
+Note: this is for use either on the ALICUDI network or externally to MNS. 
+There is not access to the Corporate Nexus externally. 
+	
+If any dependencies are required that are in the corportate nexus then they must 
+be checked out from git and build locally and installed into you local maven repo.
+-->
+  
+  <profiles>
+    <profile>
+      <id>mnsprofile</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <properties>
+        <!--
+        <http.port>8081</http.port>
+        <http.host>localhost</http.host>
+        <mmc.url>https://localhost:8443/mmc/api</mmc.url>
+        <mmc.serverGroup>ci</mmc.serverGroup>
+        <mmc.username>admin</mmc.username>
+        <mmc.password>admin</mmc.password>
+        <mmc.deploy.domain>dev</mmc.deploy.domain>
+      -->
+			<!-- this should always be true as an external network will not have access to nexus -->
+        <skip.deploy.nexus>true</skip.deploy.nexus>
+      </properties>
+    </profile>
+  </profiles>
+</settings>

@@ -197,3 +197,20 @@ Checkout the commit you want to return your repository to by checking out its ha
 Create a temporary branch off from the commit;
 Push it back to the remote repository.
 Done.
+
+
+
+##################### Merge Conflict
+eg: below
+
+****************
+{ messaging-services-dashboard-service } master » git pull                                                      /cygdrive/d/GIt/mule-apps/messaging-services-dashboard-service
+Removing messaging-services-dashboard-service/src/test/resources/parallel-execution.xml
+Auto-merging messaging-services-dashboard-service/src/main/java/com/marksandspencer/mule/servicesdashboard/checks/TCPEndpointCheck.java
+Auto-merging messaging-services-dashboard-service/src/main/app/dashboard-service.xml
+CONFLICT (content): Merge conflict in messaging-services-dashboard-service/src/main/app/dashboard-service.xml
+Auto-merging messaging-services-dashboard-service/pom.xml
+Automatic merge failed; fix conflicts and then commit the result.
+********************
+
+need to do git mergetool

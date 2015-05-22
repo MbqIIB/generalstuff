@@ -1,0 +1,4 @@
+ 
+##run logstash
+ bin/logstash --configtest -f logstash_file.conf
+  652  bin/logstash -f logstash_file.conf
