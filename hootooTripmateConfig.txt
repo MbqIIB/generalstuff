@@ -1,0 +1,11 @@
+
+
+#####Hootoo tripmate access through web - if a USB drive is attached to the tripmate
+http://10.10.10.254/data/UsbDisk1/Volume1/
+
+
+
+#### access through ULNA
+\\10.10.10.254\USBDisk1_Volume1
+
+On the work laptop , need to turn off sophos client firewall and sophos client firewall manager
