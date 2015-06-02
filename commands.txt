@@ -8811,6 +8811,17 @@ https://api-test.marksandspencer.com/int-api/article-service/api/frontend/1/arti
 
 https://api-test.marksandspencer.com/int-api/landed-cost-price-service/api/frontend/1/landed-cost-price?WayRefNumber=181232&StrokeNumber=8039&ColourCode=V0&BuyingRatioCode=760&SeasonType=SU15&Year=2015&DeptNumber=T25&SeriesNumber=M0135&PlannedFOBCostPrice=30.00&EUFabricCost=7.00&Currency=GBP&CountryOfOriginNumber=GB&ReprocessIndicator=H&DutyPreferenceIndicator=Y&TransitMethod=Z001&PriceIndicatorAtSize=0&DutyRate=4.40&ProductTypeAttributeCode=1401
 
+###### apigee URL for intb article
+https://api-perf.marksandspencer.com/int-api/article-service/api/frontend/1/article/reserve-number?Quantity=10&ClientId=PLM
+
+### apigee URL for Intb Landed Cost Price 
+https://api-perf.marksandspencer.com/int-api/landed-cost-price-service/api/frontend/1/landed-cost-price?WayRefNumber=181232&StrokeNumber=8039&ColourCode=V0&BuyingRatioCode=760&SeasonType=SU15&Year=2015&DeptNumber=T25&SeriesNumber=M0135&PlannedFOBCostPrice=30.00&EUFabricCost=7.00&Currency=GBP&CountryOfOriginNumber=GB&ReprocessIndicator=H&DutyPreferenceIndicator=Y&TransitMethod=Z001&PriceIndicatorAtSize=0&DutyRate=4.40&ProductTypeAttributeCode=1401
+
+
+##### mule URL for INTB article
+https://esbintb.unix.marksandspencercate.com:28000/article-service/api/frontend/1/article/reserve-number?Quantity=10&ClientId=PLM
+
+
 
 ###### command in jenkins
 -Dsoapui.endpoint.hostname=10.128.172.94  -Dmmc.password=admindev -Dmmc.deploy.domain=dev -Dmmc.clusterName=dev -Dmaven.test.skip=true -Dskip.soapui.test=false clean deploy
@@ -8820,8 +8831,31 @@ https://api-test.marksandspencer.com/int-api/common/api/audit/1/entries?MessageI
 
 ######### curl command for audit api externally
 
-curl -XPOST -H "Content-Type:text/plain" https://common:common@api-test.marksandspencer.com/int-api/common/api/audit/1/entries?MessageId=777888
+curl -XPOST -H "Content-Type:text/plain" https://common:common@api-test.marksandspencer.com/int-ap	i/common/api/audit/1/entries?MessageId=777888
 
 
 https://username:password@hlxd0mw01.unix.marksandspencerdev.com:18000/common/api/audit/1/entries?InterfaceId=123&InterfaceName=Test&MessageId=444
 
+
+
+
+###### stockley printers
+server : mshsrmnsukp4306
+
+## reset cloud ldap password
+https://ssp.devops.mnscorp.net/
+
+#### change password for the mnsuk account
+https://identity.mnscorp.net	
+
+
+
+####### regex expression for xsd timestamp
+^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(.)?(\d+)?(?:(Z)?|((?:\+|\-)\d{2}:\d{2})?)$
+
+
+  description: Name of the Interface that is invoking the API
+        type: string
+        required: true
+        pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}(.)?([0-9])?(?:(Z)?|((?:+|-)[0-9]{2}:[0-9]{2})?)$"
+  

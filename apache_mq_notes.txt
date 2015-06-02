@@ -1,0 +1,8 @@
+apache mq
+
+persistant stores
+jdbc
+kahadb
+leveldb - research , as this can do offline from memory to database (and hence you can persist separately.)
+
+

@@ -1,0 +1,6 @@
+###steps to initiate the BDD project
+
+mvn archetype:generate
+
+#select all DEFAULT options
+# then navigate into eclipse and open up the project that the mvn archetype was created.
