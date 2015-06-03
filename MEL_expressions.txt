@@ -1,0 +1,3 @@
+#### convert payload to string
+
+#[message.payloadAs(java.lang.string)]
